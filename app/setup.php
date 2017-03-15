@@ -31,7 +31,7 @@
     $ret = $connection->query ($query);
 
     
-    $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, profilePic LONGBLOB, resume LONGBLOB, PRIMARY KEY (studentId))";
+    $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, PRIMARY KEY (studentId))";
 	$ret = $connection->query ($query);
 
     $query = "CREATE TABLE Employer( employerId INT(10) NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, email Varchar (100) NOT NULL, company Varchar (100) NOT NULL,  profilePic LONGBLOB,  PRIMARY KEY (employerId))";
@@ -52,7 +52,7 @@
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
-        $query = "INSERT INTO Student( studentId, name, password, uniEmail, profilePic, resume ) VALUES ('S001''nirdesh', 'rgu234', 'abc@gmail.com','', '')";
+        $query = "INSERT INTO Student( studentId, name, password, uniEmail, profilePic, resume ) VALUES ('S001''nirdesh', 'rgu234', 'abc@gmail.com')";
         $ret = $connection->query ($query);
     /*
            $query = "INSERT INTO Employer( employerId, name, password, email, company,) VALUES ('E001','michael', 'comeon', 'klhr@abc.com', 'rgu')";
