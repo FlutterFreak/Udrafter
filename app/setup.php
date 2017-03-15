@@ -61,7 +61,7 @@
     $query = "INSERT INTO Job (title, description, category, wages, company, location, date) VALUES ('House Cleaning', 'clean the whole house', 'cleaning', '8.20/hr', 'scg', 'aberdeen', '12/13/2017')";
 	$ret = $connection->query ($query);
 
-    $query = "INSERT INTO Feedback (comment) VALUES ('michael ' )";
+    $query = "INSERT INTO Feedback (comments) VALUES ('michael ' )";
 	$ret = $connection->query ($query);
 
     if ($ret) {
