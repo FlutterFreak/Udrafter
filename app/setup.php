@@ -31,10 +31,10 @@
     $ret = $connection->query ($query);
 
     
-    $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT,username Varchar (100) NOT NULL, fullName Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, PRIMARY KEY (studentId))";
+    $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT,, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, PRIMARY KEY (studentId))";
 	$ret = $connection->query ($query);
 
-    $query = "CREATE TABLE Employer( employerId INT(10) NOT NULL AUTO_INCREMENT, username Varchar (100) NOT NULL, fullName Varchar (100) NOT NULL, password varchar (10) NOT NULL, email Varchar (100) NOT NULL, company Varchar (100) NOT NULL,  profilePic LONGBLOB,  PRIMARY KEY (employerId))";
+    $query = "CREATE TABLE Employer( employerId INT(10) NOT NULL AUTO_INCREMENT,  name Varchar (100) NOT NULL, password varchar (10) NOT NULL, email Varchar (100) NOT NULL, company Varchar (100) NOT NULL,  profilePic LONGBLOB,  PRIMARY KEY (employerId))";
 	$ret = $connection->query ($query);
 
     $query = "CREATE TABLE Job( jobId INT(10) NOT NULL AUTO_INCREMENT,  employerId INT NOT NULL, title Varchar (100) NOT NULL, description varchar (1000) NOT NULL, category VARCHAR (50),wages Varchar (10), company Varchar (100), location varchar (100), date DATE, 
