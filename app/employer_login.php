@@ -20,7 +20,7 @@ $password = $_POST["password"];
 
 include 'db_connect.php';
 
-$query = "select * from Student where  email=\"$email\"";
+$query = "select * from Employer where  email=\"$email\"";
 
 $results = $connection->query ($query);
 

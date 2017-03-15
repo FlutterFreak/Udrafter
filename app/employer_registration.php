@@ -21,7 +21,7 @@ if (isset ($_POST["company"])) {
 
 include 'db_connect.php';
 
-$query_check = "select * from Student where email=\"$email\"";
+$query_check = "select * from Employer where email=\"$email\"";
 
 $results = $connection->query ($query_check);
 
