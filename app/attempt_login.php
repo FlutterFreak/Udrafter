@@ -18,13 +18,7 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-  $host = "eu-cdbr-azure-west-d.cloudapp.net";
-  $user = "b46b41d46340e3";
-  $pass = "95f0622b";
-  $database = "udrafter_db";
-
-    $connection  = mysqli_connect($host, $user, $pass, $database) 
-      or die ("Error is " . $mysqli_error ($connection));  
+  include 'db_connect.php';
 
     $query = "select * from User where Username="$username"";
 

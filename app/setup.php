@@ -31,10 +31,10 @@
     $ret = $connection->query ($query);
 
     
-    $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, PRIMARY KEY (studentId))";
+    $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT,username Varchar (100) NOT NULL, fullName Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, PRIMARY KEY (studentId))";
 	$ret = $connection->query ($query);
 
-    $query = "CREATE TABLE Employer( employerId INT(10) NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, email Varchar (100) NOT NULL, company Varchar (100) NOT NULL,  profilePic LONGBLOB,  PRIMARY KEY (employerId))";
+    $query = "CREATE TABLE Employer( employerId INT(10) NOT NULL AUTO_INCREMENT, username Varchar (100) NOT NULL, fullName Varchar (100) NOT NULL, password varchar (10) NOT NULL, email Varchar (100) NOT NULL, company Varchar (100) NOT NULL,  profilePic LONGBLOB,  PRIMARY KEY (employerId))";
 	$ret = $connection->query ($query);
 
     $query = "CREATE TABLE Job( jobId INT(10) NOT NULL AUTO_INCREMENT,  employerId INT NOT NULL, title Varchar (100) NOT NULL, description varchar (1000) NOT NULL, category VARCHAR (50),wages Varchar (10), company Varchar (100), location varchar (100), date DATE, 
@@ -51,19 +51,19 @@
               FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
-
-        $query = "INSERT INTO Student( studentId, name, password, uniEmail ) VALUES ('S001','nirdesh', 'rgu234', 'abc@gmail.com')";
-        $ret = $connection->query ($query);
     /*
-           $query = "INSERT INTO Employer( employerId, name, password, email, company,) VALUES ('E001','michael', 'comeon', 'klhr@abc.com', 'rgu')";
+           $query = "INSERT INTO Student( studentId, name, password, uniEmail ) VALUES ('S001','nirdesh', 'rgu234', 'abc@gmail.com')";
            $ret = $connection->query ($query);
 
-           $query = "INSERT INTO Job (jobId, title, description, category, wages, company, location, date) VALUES ('J001','House Cleaning', 'clean the whole house', 'cleaning', '8.20/hr', 'scg', 'aberdeen', '12/13/2017')";
-           $ret = $connection->query ($query);
+              $query = "INSERT INTO Employer( employerId, name, password, email, company,) VALUES ('E001','michael', 'comeon', 'klhr@abc.com', 'rgu')";
+              $ret = $connection->query ($query);
 
-           $query = "INSERT INTO Feedback (feedbackId,comments) VALUES ('F001','michael ' )";
-           $ret = $connection->query ($query);
-       */
+              $query = "INSERT INTO Job (jobId, title, description, category, wages, company, location, date) VALUES ('J001','House Cleaning', 'clean the whole house', 'cleaning', '8.20/hr', 'scg', 'aberdeen', '12/13/2017')";
+              $ret = $connection->query ($query);
+
+              $query = "INSERT INTO Feedback (feedbackId,comments) VALUES ('F001','michael ' )";
+              $ret = $connection->query ($query);
+          */
     if ($ret) {
       echo "<p>Table created!</p>";
     }
