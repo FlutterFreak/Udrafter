@@ -57,7 +57,7 @@
               FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
-
+/*
     $query = "INSERT INTO Student(name, password, uniEmail, ) VALUES ('nirdesh', 'rgu@1', 'abc@123.com')";
 	$ret = $connection->query ($query);
 
@@ -69,7 +69,7 @@
 
     $query = "INSERT INTO Feedback (comments) VALUES ('michael ' )";
 	$ret = $connection->query ($query);
-
+*/
     if ($ret) {
       echo "<p>Table created!</p>";
     }
