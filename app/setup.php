@@ -1,18 +1,12 @@
 <html>
   <head>
-    <title>Assessment Setup</title>
+    <title>Udrafter Setup</title>
   </head>
   
   <body>
     <?php
 
-    $host = "eu-cdbr-azure-west-d.cloudapp.net";
-    $user = "b46b41d46340e3";
-    $pass = "95f0622b";
-    $database = "udrafter_db";
-
-    $connection  = mysqli_connect($host, $user, $pass, $database) 
-      or die ("Error is " . $mysqli_error ($connection));  
+   include db_connect.php;
 
     $query = "DROP TABLE User";
 	$ret = $connection->query ($query);
@@ -21,22 +15,37 @@
 	$ret = $connection->query ($query);
 
     
-    $query = "CREATE TABLE User( Username Varchar (100), Password varchar (10), Attempts Int, Timestamp Int)";
+    $query = "CREATE TABLE Student( studentId INT NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, profilePic LONGBLOB, resume LONGBLOB, PRIMARY KEY (studentId))";
 	$ret = $connection->query ($query);
 
-    $query = "CREATE TABLE AssessmentEntry( ID INT NOT NULL AUTO_INCREMENT, Username Varchar (100), Description varchar (1000), Done BOOL, WhenDone INT, WhenDue INT, PRIMARY KEY (id))";
+    $query = "CREATE TABLE Employer( employerId INT NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, email Varchar (100) NOT NULL, company Varchar (100) NOT NULL,  profilePic LONGBLOB,  PRIMARY KEY (employerId))";
 	$ret = $connection->query ($query);
 
-    $query = "INSERT INTO User(Username, Password) VALUES ('michael', 'rgu')";
+    $query = "CREATE TABLE Job( jobId INT NOT NULL AUTO_INCREMENT,  employerId INT NOT NULL, title Varchar (100) NOT NULL, description varchar (1000) NOT NULL, category VARCHAR (50),wages Varchar (10), company Varchar (100), location varchar (100), date DATE, 
+               jobPic LONGBLOB,  PRIMARY KEY (jobId),  FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE)";
+    $ret = $connection->query ($query);
+
+    $query = "CREATE TABLE Application( applicationId INT NOT NULL AUTO_INCREMENT, jobId INT NOT NULL, studentId INT NOT NULL ,employerId INT NOT NULL, completed BOOLEAN, PRIMARY KEY (applicationId),
+               FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
+                FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE,
+                FOREIGN KEY (jobId) REFERENCES Job(jobId) ON DELETE CASCADE  ON UPDATE CASCADE)";
+    $ret = $connection->query ($query);
+
+    $query = "CREATE TABLE Feedback( feedbackId INT NOT NULL AUTO_INCREMENT, studentId INT NOT NULL ,employerId INT NOT NULL, comments VARCHAR (1000), PRIMARY KEY (feedbackId),
+              FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
+                FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
+    $ret = $connection->query ($query);
+
+    $query = "INSERT INTO Student(name, password, uniEmail, ) VALUES ('nirdesh', 'rgu@1', 'abc@123.com')";
 	$ret = $connection->query ($query);
 
-    $query = "INSERT INTO AssessmentEntry (Username, Description, Done) VALUES ('michael', 'Finish Assessment', false)";
+    $query = "INSERT INTO Employer(name, password, email, company,) VALUES ('michael', 'comeon', 'klhr@abc.com', 'rgu')";
 	$ret = $connection->query ($query);
 
-    $query = "INSERT INTO AssessmentEntry (Username, Description, Done) VALUES ('michael', 'Finish Assessment 2', false)";
+    $query = "INSERT INTO Job (title, description, category, wages, company, location, date) VALUES ('House Cleaning', 'clean the whole house', 'cleaning', '8.20/hr', 'scg', 'aberdeen', '12/13/2017')";
 	$ret = $connection->query ($query);
 
-    $query = "INSERT INTO AssessmentEntry (Username, Description, Done) VALUES ('michael', 'Finish Assessment 2', false)";
+    $query = "INSERT INTO Feedback (comment) VALUES ('michael ' )";
 	$ret = $connection->query ($query);
 
     if ($ret) {
