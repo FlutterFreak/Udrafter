@@ -1,6 +1,6 @@
 <html>
   <head>  
-    <title>Simple Registration</title>
+    <title>Student Registration</title>
   </head>
   <body>
   
