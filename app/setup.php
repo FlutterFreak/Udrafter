@@ -15,6 +15,12 @@
     or die ("Error is " . $mysqli_error ($connection));
 
 
+    $query = "DROP TABLE  user";
+    $ret = $connection->query ($query);
+
+    $query = "DROP TABLE assesmententry";
+    $ret = $connection->query ($query);
+
     $query = "DROP TABLE  Student";
 	$ret = $connection->query ($query);
 
@@ -34,25 +40,25 @@
     $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, profilePic LONGBLOB, resume LONGBLOB, PRIMARY KEY (studentId))";
 	$ret = $connection->query ($query);
 
-    $query = "CREATE TABLE Employer( employerId INT NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, email Varchar (100) NOT NULL, company Varchar (100) NOT NULL,  profilePic LONGBLOB,  PRIMARY KEY (employerId))";
+    $query = "CREATE TABLE Employer( employerId INT(10) NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, email Varchar (100) NOT NULL, company Varchar (100) NOT NULL,  profilePic LONGBLOB,  PRIMARY KEY (employerId))";
 	$ret = $connection->query ($query);
 
-    $query = "CREATE TABLE Job( jobId INT NOT NULL AUTO_INCREMENT,  employerId INT NOT NULL, title Varchar (100) NOT NULL, description varchar (1000) NOT NULL, category VARCHAR (50),wages Varchar (10), company Varchar (100), location varchar (100), date DATE, 
+    $query = "CREATE TABLE Job( jobId INT(10) NOT NULL AUTO_INCREMENT,  employerId INT NOT NULL, title Varchar (100) NOT NULL, description varchar (1000) NOT NULL, category VARCHAR (50),wages Varchar (10), company Varchar (100), location varchar (100), date DATE, 
                jobPic LONGBLOB,  PRIMARY KEY (jobId),  FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
-    $query = "CREATE TABLE Application( applicationId INT NOT NULL AUTO_INCREMENT, jobId INT NOT NULL, studentId INT NOT NULL ,employerId INT NOT NULL, completed BOOLEAN, PRIMARY KEY (applicationId),
+    $query = "CREATE TABLE Application( applicationId INT(10) NOT NULL AUTO_INCREMENT, jobId INT NOT NULL, studentId INT NOT NULL ,employerId INT NOT NULL, completed BOOLEAN, PRIMARY KEY (applicationId),
                FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (jobId) REFERENCES Job(jobId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
-    $query = "CREATE TABLE Feedback( feedbackId INT NOT NULL AUTO_INCREMENT, studentId INT NOT NULL ,employerId INT NOT NULL, comments VARCHAR (1000), PRIMARY KEY (feedbackId),
+    $query = "CREATE TABLE Feedback( feedbackId INT(10) NOT NULL AUTO_INCREMENT, studentId INT NOT NULL ,employerId INT NOT NULL, comments VARCHAR (1000), PRIMARY KEY (feedbackId),
               FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
-   /* $query = "INSERT INTO Student(name, password, uniEmail, ) VALUES ('nirdesh', 'rgu@1', 'abc@123.com')";
+    $query = "INSERT INTO Student(name, password, uniEmail, ) VALUES ('nirdesh', 'rgu@1', 'abc@123.com')";
 	$ret = $connection->query ($query);
 
     $query = "INSERT INTO Employer(name, password, email, company,) VALUES ('michael', 'comeon', 'klhr@abc.com', 'rgu')";
@@ -63,7 +69,7 @@
 
     $query = "INSERT INTO Feedback (comments) VALUES ('michael ' )";
 	$ret = $connection->query ($query);
-*/
+
     if ($ret) {
       echo "<p>Table created!</p>";
     }
