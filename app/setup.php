@@ -51,19 +51,19 @@
               FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
-    /*
+
         $query = "INSERT INTO Student( name, password, uniEmail, ) VALUES ('nirdesh', 'rgu@1', 'abc@123.com')";
         $ret = $connection->query ($query);
+    /*
+           $query = "INSERT INTO Employer( employerId, name, password, email, company,) VALUES ('E001','michael', 'comeon', 'klhr@abc.com', 'rgu')";
+           $ret = $connection->query ($query);
 
-        $query = "INSERT INTO Employer( employerId, name, password, email, company,) VALUES ('E001','michael', 'comeon', 'klhr@abc.com', 'rgu')";
-        $ret = $connection->query ($query);
+           $query = "INSERT INTO Job (jobId, title, description, category, wages, company, location, date) VALUES ('J001','House Cleaning', 'clean the whole house', 'cleaning', '8.20/hr', 'scg', 'aberdeen', '12/13/2017')";
+           $ret = $connection->query ($query);
 
-        $query = "INSERT INTO Job (jobId, title, description, category, wages, company, location, date) VALUES ('J001','House Cleaning', 'clean the whole house', 'cleaning', '8.20/hr', 'scg', 'aberdeen', '12/13/2017')";
-        $ret = $connection->query ($query);
-
-        $query = "INSERT INTO Feedback (feedbackId,comments) VALUES ('F001','michael ' )";
-        $ret = $connection->query ($query);
-    */
+           $query = "INSERT INTO Feedback (feedbackId,comments) VALUES ('F001','michael ' )";
+           $ret = $connection->query ($query);
+       */
     if ($ret) {
       echo "<p>Table created!</p>";
     }
