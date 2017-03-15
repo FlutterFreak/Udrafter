@@ -6,7 +6,7 @@
   <body>
     <?php
 
-    include db_udrafter.php;
+    include db_connect.php;
 
 
     $query = "DROP TABLE  user";
