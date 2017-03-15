@@ -6,7 +6,13 @@
   <body>
     <?php
 
-    include db_connect.php;
+    $host = "eu-cdbr-azure-west-d.cloudapp.net";
+    $user = "b46b41d46340e3";
+    $pass = "95f0622b";
+    $database = "udrafter_db";
+
+    $connection  = mysqli_connect($host, $user, $pass, $database)
+    or die ("Error is " . $mysqli_error ($connection));
 
 
     $query = "DROP TABLE  user";
