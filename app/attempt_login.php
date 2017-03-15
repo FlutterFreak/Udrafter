@@ -26,7 +26,7 @@
     $connection  = mysqli_connect($host, $user, $pass, $database) 
       or die ("Error is " . $mysqli_error ($connection));  
 
-    $query = "select * from User where Username=\"$username\"";
+    $query = "select * from User where Username="$username"";
 
 	$results = $connection->query ($query);
     

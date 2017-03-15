@@ -15,11 +15,20 @@
     or die ("Error is " . $mysqli_error ($connection));
 
 
-    $query = "DROP TABLE User";
+    $query = "DROP TABLE  Student";
 	$ret = $connection->query ($query);
 
-    $query = "DROP TABLE AssessmentEntry";
+    $query = "DROP TABLE Employer";
 	$ret = $connection->query ($query);
+
+    $query = "DROP TABLE  Job";
+    $ret = $connection->query ($query);
+
+    $query = "DROP TABLE  Application";
+    $ret = $connection->query ($query);
+
+    $query = "DROP TABLE  Feedback";
+    $ret = $connection->query ($query);
 
     
     $query = "CREATE TABLE Student( studentId INT NOT NULL AUTO_INCREMENT, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, profilePic LONGBLOB, resume LONGBLOB, PRIMARY KEY (studentId))";
