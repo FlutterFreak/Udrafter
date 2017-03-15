@@ -18,7 +18,7 @@
     $query = "DROP TABLE  user";
     $ret = $connection->query ($query);
 
-    $query = "DROP TABLE assesmententry";
+    $query = "DROP TABLE assessmententry";
     $ret = $connection->query ($query);
 
     $query = "DROP TABLE  Student";
