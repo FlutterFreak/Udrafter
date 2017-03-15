@@ -52,7 +52,7 @@
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
-        $query = "INSERT INTO Student( name, password, uniEmail, ) VALUES ('nirdesh', 'rgu@1', 'abc@123.com')";
+        $query = "INSERT INTO Student( name ) VALUES ('nirdesh')";
         $ret = $connection->query ($query);
     /*
            $query = "INSERT INTO Employer( employerId, name, password, email, company,) VALUES ('E001','michael', 'comeon', 'klhr@abc.com', 'rgu')";
