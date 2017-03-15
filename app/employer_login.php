@@ -41,7 +41,7 @@ if ($num_results > 0) {
 }
 else {
     echo "<p>Invalid login</p>";
-    echo ">Register</a>";
+    echo "<a href = \"employer_registration.html\">Register</a>";
 }
 ?>
 

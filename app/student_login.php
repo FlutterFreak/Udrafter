@@ -41,7 +41,7 @@ $query = "select * from Student where  uniEmail=\"$uniemail\"";
     }
     else {
         echo "<p>Invalid login</p>";
-        echo ">Register</a>";
+        echo "<a href = \"student_registration.html\">Register</a>";
     }       
   ?>
 
