@@ -1,7 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 1516734
- * Date: 16/03/2017
- * Time: 13:23
- */
+
+if (isset ($_SESSION["email"])){
+    $email= $_SESSION["email"];
+    include 'db_connect.php';
+
+    $query = "select employerId, email from Employer where  email=\"$email\"";
+    
+    $employerId= employerId;
+    
+}
