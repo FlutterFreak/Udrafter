@@ -32,7 +32,7 @@ $query = "select * from Student where  uniEmail=\"$uniemail\"";
 
         if ($pass == $password) {
             $_SESSION["uniemail"] = $uniemail;
-            echo "<p>Login successful, ". $_SESSION["uniemail"] . ".  Click <a href = \"front_end.php\">here</a> to go to your Assessment list.</p>";
+            echo "<p>Login successful, ". $_SESSION["uniemail"] . ".  Click <a href = refrences\"front_end.php\">here</a> to go to your Assessment list.</p>";
         }
         else {
             echo "<p>Invalid login</p>";
