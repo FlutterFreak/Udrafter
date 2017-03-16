@@ -36,7 +36,7 @@
       }
 	  else {
         echo "<p>Invalid login</p>";
-        echo "<a href = \"example_login.html\">Try again</a>";
+        echo ">Try again</a>";
 	  }
 	}	  
     else {
