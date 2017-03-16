@@ -3,7 +3,87 @@
     <title>Student Login</title>
 </head>
 <body>
+<?php $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
 
+                if($pageWasRefreshed){
+
+                    unset($_SESSION['loginmessage']);
+
+                    unset($_SESSION['emailmessage']);
+
+                    unset($_SESSION['passwordmessage']);
+
+                    unset($_SESSION['passmsg']);
+
+                    unset($_SESSION['usernamemsg']);
+
+                    unset($_SESSION['emailmsg']);
+
+                    unset($_SESSION['sqlmsg']);
+
+                    unset($_SESSION['errormsg']);
+
+                }?>
+
+<?php
+
+                if (isset($_SESSION['loginmessage'])){
+
+                    echo $_SESSION['loginmessage'];
+
+                } ?>
+
+<?php if (isset($_SESSION['emailmessage'])){
+
+                    echo $_SESSION['emailmessage'];
+
+                } ?>
+
+<?php if (isset($_SESSION['passwordmessage'])){
+
+                    echo $_SESSION['passwordmessage'];
+
+                } ?>
+
+<?php if (isset($_SESSION['passmsg'])){
+
+                    echo $_SESSION['passmsg'];
+
+                }
+
+                ?>
+
+<?php if (isset($_SESSION['usernamemsg'])){
+
+                    echo $_SESSION['usernamemsg'];
+
+                }
+
+                ?>
+
+<?php if (isset($_SESSION['emailmsg'])){
+
+                    echo $_SESSION['emailmsg'];
+
+                };
+
+                ?>
+
+<?php if (isset($_SESSION['sqlmsg'])){
+
+                    echo $_SESSION['sqlmsg'];
+
+                }
+
+                ?>
+
+<?php if (isset($_SESSION['errormsg'])){
+
+                    echo $_SESSION['errormsg'];
+
+                }
+
+                ?>
 <form action = "student_login.php" method = "post">
 
     <p>University Email</p>
