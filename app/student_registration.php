@@ -35,7 +35,7 @@
       exit;
     }
     
-    $query = "insert into Student (name, password, uniEmail) values (\"$name\", \"$password\",\"$uniemail\")";
+    $query = "insert into Student (name, password, uniEmail) values (\"$name\", \"$password\",\"$email\")";
     
 	$ret = $connection->query ($query);
     

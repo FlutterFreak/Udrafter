@@ -26,7 +26,7 @@ $query = "select * from Student where  uniEmail=\"$uniemail\"";
 	$results = $connection->query ($query);
     
     $num_results = mysqli_num_rows ($results);
-  	
+
   	if ($num_results > 0) {
         $row = mysqli_fetch_array ($results);
         $pass = $row["password"];
@@ -41,7 +41,6 @@ $query = "select * from Student where  uniEmail=\"$uniemail\"";
         }
     }
     else {
-        echo $query;
         echo "<p>Invalid login</p>";
         echo "<a href = \"student_registration.html\">Register</a>";
     }       
