@@ -11,7 +11,7 @@
   }
 
   if (isset ($_POST["uniemail"])) {
-      $email = $_POST["uniemail"];
+      $uniemail = $_POST["uniemail"];
   }
 	if (isset ($_POST["password"])) {
 		$password= $_POST["password"];
@@ -35,7 +35,7 @@
       exit;
     }
     
-    $query = "insert into Student (name, password, uniEmail) values (\"$name\", \"$password\",\"$email\")";
+    $query = "insert into Student (name, password, uniEmail) values (\"$name\", \"$password\",\"$uniemail\")";
     
 	$ret = $connection->query ($query);
     
