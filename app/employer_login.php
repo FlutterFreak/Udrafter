@@ -12,7 +12,7 @@ session_start();
 
 if (isset ($_SESSION["email"])) {
     echo "<p>You are already logged in.</p>";
-    echo "<p>Click <a href =\" postjob.php\">here</a> to post a job.</p>";
+    echo "<p>Click <a href =\" postjob.html\">here</a> to post a job.</p>";
     echo "<p>Click <a href =\" logout.php\">here</a> to logout.</p>";
     return;
 
@@ -35,7 +35,7 @@ if ($num_results > 0) {
 
     if ($pass == $password) {
         $_SESSION["email"] = $email;
-        echo "<p>Login successful, ". $_SESSION["email"] . ".  Click <a href =\" postjob.php\">here</a> to post a job.</p>";
+        echo "<p>Login successful, ". $_SESSION["email"] . ".  Click <a href =\" postjob.html\">here</a> to post a job.</p>";
     }
     else {
         echo "<p>Invalid login</p>";
