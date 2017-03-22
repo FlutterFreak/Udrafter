@@ -12,8 +12,8 @@ session_start();
 
 if (isset ($_SESSION["email"])) {
     echo "<p>You are already logged in.</p>";
-    echo "<p>Click <a href = postjob.php\">here</a> to post a job.</p>"
-    echo "<p>Click <a href = logout.php\">here</a> to logout.</p>"
+    echo "<p>Click <a href = postjob.php\">here</a> to post a job.</p>";
+    echo "<p>Click <a href = logout.php\">here</a> to logout.</p>";
     return;
 
 }
