@@ -55,7 +55,14 @@ $database = "udrafter_db";
   
     $row = mysqli_fetch_array ($ret);
   
+  
+  
+  
     $node = $doc->createElement( "entry" ); 
+
+
+
+
 
     $id = $doc->createElement( "ID" ); 
   
@@ -63,18 +70,29 @@ $database = "udrafter_db";
     
     $node->appendChild( $id); 
     
+      
+      
+      
+      
     $description = $doc->createElement( "Description" ); 
   
     $description->appendChild($doc->createTextNode($row["Description"])); 
     
     $node->appendChild( $description ); 
  
+
+
+
     $done = $doc->createElement( "Done" ); 
   
     $done->appendChild($doc->createTextNode($row["Done"])); 
     
     $node->appendChild( $done); 
 
+      
+      
+      
+      
 
     $whendone = $doc->createElement( "WhenDone" ); 
   
@@ -87,6 +105,9 @@ $database = "udrafter_db";
   
     $whendue->appendChild($doc->createTextNode($row["WhenDue"])); 
     
+
+
+
     $node->appendChild( $whendue); 
   
     $root->appendChild ($node);
