@@ -3,5 +3,5 @@ session_start();
 
 session_destroy();
 
-header("Location: student_login.html");
+header("Location: emplpoyer_login.html");
 ?>
