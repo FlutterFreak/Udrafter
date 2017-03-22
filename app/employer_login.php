@@ -32,7 +32,7 @@ if ($num_results > 0) {
 
     if ($pass == $password) {
         $_SESSION["email"] = $email;
-        echo "<p>Login successful, ". $_SESSION["email"] . ".  Click <a href = refrences\"front_end.php\">here</a> to go to your Assessment list.</p>";
+        echo "<p>Login successful, ". $_SESSION["email"] . ".  Click <a href = postjob.php\">here</a> to post a job.</p>";
     }
     else {
         echo "<p>Invalid login</p>";
