@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
 <head>
     <title>Employer Registration</title>
@@ -46,8 +50,10 @@ if (!$ret) {
     echo "<p>Failed registration: " . mysqli_error($connection) . "</p>";
 }
 
-echo "<p>Registration successful</p>";
-echo "<a href = \"employer_login.html\"> Employer login</a>";
+    $_SESSION["email"] = $email;
+
+    echo "<p>Registration successful</p>";
+    echo "<a href = \"employer_login.html\"> Employer login</a>";
 
 
 ?>
