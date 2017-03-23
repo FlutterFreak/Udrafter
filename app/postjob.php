@@ -5,12 +5,16 @@
 if (isset ($_SESSION["email"])){
     $email= $_SESSION["email"];
 
-    if (isset ($_GET["submit"])){
+    echo "<p>$email<?p>";
+
+
+
     include 'db_connect.php';
     $query_get = "select employerId, email from employer where    email=\"$email\"";
 $employerId= $query_get;
 
         echo "<p>$employerId<?p>";
+
 if (isset ($_get["title"])) { 
 $title = $_get["title"]; 
 } 
@@ -22,7 +26,7 @@ $category= $_get["category"];
 } 
 if (isset ($_get["wages"])) { 
 $wages= $_get["wages"]; 
-} 
+} K
 if (isset ($_get["company"])) { 
 $company = $_get["company"]; 
 } 
@@ -42,5 +46,4 @@ echo "<p>Your Job is Sucessfully Posted</p>";
 else {
     echo "<p>Please sign in as Employer</p>";
     echo "<a href = \"employer_login.html\">Login</a>";
-}
 }
