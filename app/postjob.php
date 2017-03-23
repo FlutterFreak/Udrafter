@@ -10,10 +10,13 @@ if (isset ($_SESSION["email"])) {
 
 
     include 'db_connect.php';
-    $query_get = "select employerId, email from employer where    email=\"$email\"";
-$employerId= $query_get;
+    $query_get = "select employerId, email from employer where   email=\"$email\"";
+    $results = mysqli_query( $query);
 
-        echo "<p>aaaaa $employerId<?p>";
+    $row = mysql_fetch_array($results);
+    $employerid = $row["employerId"];
+
+echo "<p>aaaaa $employerId<?p>";
 
 if (isset ($_get["title"])) { 
 $title = $_get["title"]; 
