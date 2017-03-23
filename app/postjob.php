@@ -30,7 +30,8 @@ if (isset ($_GET["category"])) {
 $category= $_GET["category"];
 } 
 if (isset ($_GET["wages"])) {
-$wages= $_get["wages"]; 
+$wages= $_get["wages"];
+    echo "wage is $wages";
 }
 if (isset ($_GET["company"])) {
 $company = $_GET["company"];
