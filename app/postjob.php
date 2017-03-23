@@ -20,7 +20,8 @@ if (isset ($_SESSION["email"])) {
 echo "<p>aaaaa axx $employerId xx<?p>";
 
 if (isset ($_GET["title"])) {
-$title = $_GET["title"]; 
+$title = $_GET["title"];
+    echo "Title is $title";
 }
 if (isset ($_get["description"])) { 
 $description = $_get["description"]; 
