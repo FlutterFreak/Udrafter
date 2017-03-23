@@ -14,7 +14,7 @@ if (isset ($_SESSION["email"])) {
     $results = mysqli_query( $query_get);
 
     $row = mysql_fetch_array($results);
-    $employerid = $row["employerId"];
+    $employerId = $row["employerId"];
 
 echo "<p>aaaaa xx$employerIdxx<?p>";
 
