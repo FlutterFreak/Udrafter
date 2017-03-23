@@ -26,7 +26,7 @@ $category= $_get["category"];
 } 
 if (isset ($_get["wages"])) { 
 $wages= $_get["wages"]; 
-} K
+}
 if (isset ($_get["company"])) { 
 $company = $_get["company"]; 
 } 
