@@ -13,7 +13,7 @@ if (isset ($_SESSION["email"])) {
     $query_get = "select employerId, email from employer where    email=\"$email\"";
 $employerId= $query_get;
 
-        echo "<p>$employerId<?p>";
+        echo "<p>aaaaa $employerId<?p>";
 
 if (isset ($_get["title"])) { 
 $title = $_get["title"]; 
