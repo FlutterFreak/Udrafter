@@ -16,7 +16,7 @@ if (isset ($_SESSION["email"])) {
     $row = mysql_fetch_array($results);
     $employerid = $row["employerId"];
 
-echo "<p>aaaaa $employerId<?p>";
+echo "<p>aaaaa \"$employerId\"<?p>";
 
 if (isset ($_get["title"])) { 
 $title = $_get["title"]; 
