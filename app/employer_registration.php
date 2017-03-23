@@ -32,7 +32,7 @@ $results = $connection->query ($query_check);
 if (!$results) {
     echo "<p>" . mysql_error() . "</p>";
 }
-
+ 
 $num_results = mysqli_num_rows ($results);
 
 if ($num_results != 0) {
