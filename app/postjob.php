@@ -38,13 +38,13 @@ if (isset ($_get["location"])) {
 $location = $_get["location"]; 
 } 
 if (isset ($_get["date"])) { 
-$date = $_get["date"];
-    $date = date_create($date);
+    $date = $_get["date"];
+
 }
 
 echo "<p>Date is $date</p>";
 
-$query = "insert into job (employerId, title, description,category, wages, company, location, date) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
+$query = "insert into job (employerId, title, description,category, wages, company, location) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\")";
 $ret = $connection->query ($query); 
 if (!$ret) {
     echo "<p>Failed to post Job:" . mysqli_error($connection) . "</p>";
