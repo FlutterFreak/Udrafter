@@ -19,9 +19,9 @@ if (isset ($_SESSION["email"])) {
 
 echo "<p>aaaaa axx $employerId xx<?p>";
 
-if (isset ($_get["title"])) { 
-$title = $_get["title"]; 
-} 
+if (isset ($_GET["title"])) {
+$title = $_GET["title"]; 
+}
 if (isset ($_get["description"])) { 
 $description = $_get["description"]; 
 } 
