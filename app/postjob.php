@@ -11,7 +11,7 @@ if (isset ($_SESSION["email"])) {
 
     include 'db_connect.php';
     $query_get = "select employerId, email from employer where    email=\"$email\"";
-$employerId= $query_get;
+//$employerId= $query_get;
 
         echo "<p>aaaaa $employerId<?p>";
 
