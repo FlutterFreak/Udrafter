@@ -40,7 +40,10 @@ $location = $_get["location"];
 if (isset ($_get["date"])) { 
 $date = $_get["date"];
     $date = date_create($date);
-} 
+}
+
+echo "<p>Date is $date</p>";
+
 $query = "insert into job (employerId, title, description,category, wages, company, location, date) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
 $ret = $connection->query ($query); 
 if (!$ret) {
