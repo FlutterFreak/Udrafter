@@ -3,6 +3,7 @@
 if (isset ($_GET["submit"])){
     if (isset($_GET["title"])){
         $Title = $_GET["title"];
+        echo "<p> " .$Title ." ";
 //connect to database 
         include 'db_connect.php';
         $query= "SELECT * from Job WHERE title LIKE '%" .$Title. "%' OR description LIKE '%" .$Title. "%'";
