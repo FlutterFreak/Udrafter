@@ -23,23 +23,23 @@ if (isset ($_GET["title"])) {
 $title = $_GET["title"];
     echo "Title is $title";
 }
-if (isset ($_get["description"])) { 
-$description = $_get["description"]; 
+if (isset ($_GET["description"])) {
+$description = $_GET["description"];
 } 
-if (isset ($_get["category"])) { 
-$category= $_get["category"]; 
+if (isset ($_GET["category"])) {
+$category= $_GET["category"];
 } 
-if (isset ($_get["wages"])) { 
+if (isset ($_GET["wages"])) {
 $wages= $_get["wages"]; 
 }
-if (isset ($_get["company"])) { 
-$company = $_get["company"]; 
+if (isset ($_GET["company"])) {
+$company = $_GET["company"];
 } 
-if (isset ($_get["location"])) { 
-$location = $_get["location"]; 
+if (isset ($_GET["location"])) {
+$location = $_GET["location"];
 } 
-if (isset ($_get["date"])) { 
-    $date = $_get["date"];
+if (isset ($_GET["date"])) {
+    $date = $_GET["date"];
 
 }
 
