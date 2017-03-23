@@ -11,7 +11,7 @@ if (isset ($_SESSION["email"])) {
 
     include 'db_connect.php';
     $query_get = "select employerId, email from employer where   email=\"$email\"";
-    $results = mysqli_query( $query);
+    $results = mysqli_query( $query_get);
 
     $row = mysql_fetch_array($results);
     $employerid = $row["employerId"];
