@@ -46,7 +46,7 @@ if (isset ($_GET["date"])) {
 
 echo "<p>Date is $date</p>";
 
-$query = "insert into job (employerId, title, description,category, wages, company, location) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
+$query = "insert into job (employerId, title, description,category, wages, company, location, date) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
 $ret = $connection->query ($query); 
 if (!$ret) {
     echo "<p>Failed to post Job:" . mysqli_error($connection) . "</p>";
