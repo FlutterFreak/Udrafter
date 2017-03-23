@@ -6,6 +6,9 @@ if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
 
     echo "<p>$email<?p>";
+}else {
+    echo "<p>Please sign in as Employer</p>";
+    echo "<a href = \"employer_login.html\">Login</a>";
 }
 
 
@@ -50,10 +53,9 @@ $query = "insert into job (employerId, title, description,category, wages, compa
 $ret = $connection->query ($query); 
 if (!$ret) {
     echo "<p>Failed to post Job:" . mysqli_error($connection) . "</p>";
-} 
-//echo "<p>Your Job is Sucessfully Posted</p>";
-
-else {
-    echo "<p>Please sign in as Employer</p>";
-    echo "<a href = \"employer_login.html\">Login</a>";
+} else{
+    echo "<p>Your Job is Sucessfully Posted</p>";
 }
+
+
+
