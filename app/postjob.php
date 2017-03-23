@@ -1,5 +1,4 @@
 
-// postjob.php 
 <?php
 
 
@@ -8,7 +7,7 @@ if (isset ($_SESSION["email"])){
 
     if (isset ($_GET["submit"])){
     include 'db_connect.php';
-    $query_get = "select employerId, email from Employer where    email=\"$email\"";
+    $query_get = "select employerId, email from employer where    email=\"$email\"";
 
 $employerId= $query_get; 
 if (isset ($_get["title"])) { 
@@ -32,7 +31,7 @@ $location = $_get["location"];
 if (isset ($_get["date"])) { 
 $date = $_get["date"]; 
 } 
-$query = "insert into Job (employerId, title, description,category, wages, company, location, date) values". "(\"$employerId\", \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
+$query = "insert into job (employerId, title, description,category, wages, company, location, date) values". "(\"$employerId\", \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
 $ret = $connection->query ($query); 
 if (!$ret) {
     echo "<p>Failed to post Job:" . mysqli_error($connection) . "</p>";
