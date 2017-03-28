@@ -26,7 +26,7 @@ if (isset ($_GET["submit"])) {
     if ($num_results == 0) {
         return "Oh no! no results found";
     }
-
+echo $num_results;
     $doc = new DOMDocument();
     $doc->formatOutput = true;
 
