@@ -19,11 +19,9 @@ echo "<p> xxx  $Title</p> ";
 
     $results = $connection->query ($query_get);
 
-    $row = mysqli_fetch_array($results);
-    $category = $row["category"];
-$jobId = $row["jobId"];
-$description = $row["description"];
-echo "<p> xxxx $description </p>";
+
+
+
 // create while loop and loop through results 
     while ($row = mysql_fetch_array($results)) {
         $title = $row["title"];
@@ -33,6 +31,7 @@ echo "<p> xxxx $description </p>";
         $company = $row["company"];
         $location = $row["location"];
         $date = $row["date"];
+        echo "<p> xxxx $description </p>";
 //display the results   
         echo "<ul>\n";
         echo "<li>" . $title . " " . $description . " " . $category . " " . $wages . " " . $company . " " . $location . " " . $date . "</li>\n";
