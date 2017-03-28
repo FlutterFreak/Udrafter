@@ -20,10 +20,10 @@ echo "<p> xxx  $Title</p> ";
     $results = $connection->query ($query_get);
 
     $row = mysqli_fetch_array($results);
-
+    $category = $row["category"];
 $jobId = $row["jobId"];
 $description = $row["description"];
-echo "<p> xxx $description</p>";
+echo "<p> xxx $category </p>";
 // create while loop and loop through results 
     while ($row = mysql_fetch_array($results)) {
         $title = $row["title"];
