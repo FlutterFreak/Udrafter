@@ -15,7 +15,7 @@ if (isset ($_GET["submit"])) {
 echo "<p> xxx  $Title</p> ";
 //connect to database 
     include 'db_connect.php';
-    $query_get = "select * from job where  title=\"$Title\"";
+    $query_get = "select * from job where  title like '%" . $Title . "%' ";
 
     $results = $connection->query ($query_get);
 
@@ -23,7 +23,7 @@ echo "<p> xxx  $Title</p> ";
     $category = $row["category"];
 $jobId = $row["jobId"];
 $description = $row["description"];
-echo "<p> xxx $description </p>";
+echo "<p> xxxx $description </p>";
 // create while loop and loop through results 
     while ($row = mysql_fetch_array($results)) {
         $title = $row["title"];
