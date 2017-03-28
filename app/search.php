@@ -111,7 +111,7 @@ if (isset ($_GET["submit"])) {
 
     mysqli_close($connection);
 
-    echo $doc->saveJSON();
+    echo $doc->saveXML();
 
 
 
