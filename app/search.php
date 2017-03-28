@@ -10,9 +10,8 @@ if (isset ($_GET["submit"])) {
     } else {
         echo "<p>Please Enter a Search Query</p>";
     }
-} else{
-    echo "<p>No results Found</p>";
-}
+
+
 echo "<p> xxx  $Title</p> ";
 //connect to database 
     include 'db_connect.php';
@@ -39,3 +38,6 @@ echo "<p> xxxx $jobId</p>";
         echo "</ul>";
     }
 
+} else {
+    echo "<p>No results Found</p>";
+}
