@@ -10,6 +10,10 @@ if (isset ($_GET["submit"])) {
     } else {
         echo "<p>Please Enter a Search Query</p>";
     }
+} else{
+    echo "<p>No results Found</p>";
+}
+
 //connect to database 
     include 'db_connect.php';
     $query = "SELECT * from Job WHERE title LIKE '%" . $Title . "%' ";
@@ -32,7 +36,4 @@ if (isset ($_GET["submit"])) {
         echo "<li>" . $title . " " . $description . " " . $category . " " . $wages . " " . $company . " " . $location . " " . $date . "</li>\n";
         echo "</ul>";
     }
-} else{
-    echo "<p>No results Found</p>";
-}
 
