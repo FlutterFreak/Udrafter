@@ -13,7 +13,7 @@ if (isset ($_GET["submit"])) {
 } else{
     echo "<p>No results Found</p>";
 }
-echo "<p> " . $Title . "</p> ";
+echo "<p> xxx  $Title</p> ";
 //connect to database 
     include 'db_connect.php';
     $query = "SELECT * from Job WHERE title =\"$Title=\"";

@@ -20,7 +20,7 @@ if (isset ($_SESSION["email"])) {
     $row = mysqli_fetch_array($results);
     $employerId = $row["employerId"];
 
-
+echo "<p>aaaaa $employerId xx<?p>";
 
 if (isset ($_GET["title"])) {
 $title = $_GET["title"];
