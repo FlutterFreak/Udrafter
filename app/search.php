@@ -21,9 +21,9 @@ echo "<p> xxx  $Title</p> ";
 
     $results = $connection->query($query);
 $row = mysqli_fetch_array($results);
-$category = $row["category"];
+$jobId = $row["jobId"];
 $description = $row["description"];
-echo "<p> xxx $category</p>";
+echo "<p> xxx $jobId</p>";
 // create while loop and loop through results 
     while ($row = mysql_fetch_array($results)) {
         $title = $row["title"];
