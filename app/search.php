@@ -23,7 +23,7 @@ echo "<p> xxx  $Title</p> ";
     $category = $row["category"];
 $jobId = $row["jobId"];
 $description = $row["description"];
-echo "<p> xxx $category </p>";
+echo "<p> xxx $description </p>";
 // create while loop and loop through results 
     while ($row = mysql_fetch_array($results)) {
         $title = $row["title"];
