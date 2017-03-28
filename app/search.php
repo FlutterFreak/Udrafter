@@ -15,7 +15,7 @@ if (isset ($_GET["submit"])) {
 echo "<p> xxx  $Title</p> ";
 //connect to database 
     include 'db_connect.php';
-    $query_get = "select * from job where  title like '%" . $Title . "%' ";
+    $query_get = "select * from job where  title like '%" . $Title . "%' or description like '%" . $Title . "%' ";
 
     $results = $connection->query ($query_get);
 
