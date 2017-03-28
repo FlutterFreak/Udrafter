@@ -12,7 +12,7 @@ if (isset ($_GET["submit"])) {
     }
 //connect to database 
     include 'db_connect.php';
-    $query = "SELECT * from Job WHERE title LIKE '%" . $Title . "%' OR description LIKE '%" . $Title . "%'";
+    $query = "SELECT * from Job WHERE title LIKE '%" . $Title . "%' ";
 
 
     $results = $connection->query($query);
