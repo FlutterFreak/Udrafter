@@ -15,11 +15,12 @@ if (isset ($_GET["submit"])) {
 echo "<p> xxx  $Title</p> ";
 //connect to database 
     include 'db_connect.php';
-    $query = "select * from Job where title =\"$Title=\"";
+    $query_get = "select * from job where  title=\"$Title\"";
 
+    $results = $connection->query ($query_get);
 
-    $results = $connection->query($query);
-$row = mysqli_fetch_array($results);
+    $row = mysqli_fetch_array($results);
+
 $jobId = $row["jobId"];
 $description = $row["description"];
 echo "<p> xxxx $jobId</p>";
