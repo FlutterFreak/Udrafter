@@ -20,7 +20,8 @@ if (isset ($_GET["submit"])) {
 
 
     $results = $connection->query($query);
-
+$row = mysqli_fetch_array($results);
+$description = $row["description"];
 
 // create while loop and loop through results 
     while ($row = mysql_fetch_array($results)) {
