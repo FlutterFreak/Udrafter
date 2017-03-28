@@ -21,6 +21,14 @@ if (isset ($_GET["submit"])) {
 //  get results
     $row = mysqli_fetch_array($results);
 
+$title = $row["title"];
+$description = $row["description"];
+$category = $row["category"];
+$wages = $row["wages"];
+$company = $row["company"];
+$location = $row["location"];
+$date = $row["date"];
+
     $num_results = mysqli_num_rows ($results);
 
     if ($num_results == 0) {
@@ -48,6 +56,8 @@ echo $num_results;
         $jobId->appendChild($doc->createTextNode($row["jobID"]));
 
         $node->appendChild( $jobID);
+
+
 
 
         $employerId = $doc->createElement( "employerId" );
