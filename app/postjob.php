@@ -20,11 +20,11 @@ if (isset ($_SESSION["email"])) {
     $row = mysqli_fetch_array($results);
     $employerId = $row["employerId"];
 
-echo "<p>aaaaa $employerId xx<?p>";
+
 
 if (isset ($_GET["title"])) {
 $title = $_GET["title"];
-    echo "Title is $title";
+
 }
 if (isset ($_GET["description"])) {
 $description = $_GET["description"];
@@ -34,7 +34,7 @@ $category= $_GET["category"];
 } 
 if (isset ($_GET["wages"])) {
 $wages= $_GET["wages"];
-    echo "wage is $wages";
+
 }
 if (isset ($_GET["company"])) {
 $company = $_GET["company"];
@@ -47,7 +47,7 @@ if (isset ($_GET["date"])) {
 
 }
 
-echo "<p>Date is $date</p>";
+
 
 $query = "insert into job (employerId, title, description,category, wages, company, location, date) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
 $ret = $connection->query ($query); 
