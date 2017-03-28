@@ -15,7 +15,7 @@ if (isset ($_GET["submit"])) {
 echo "<p> xxx  $Title</p> ";
 //connect to database 
     include 'db_connect.php';
-    $query = "SELECT * from Job WHERE title =\"$Title=\"";
+    $query = "select * from Job where title =\"$Title=\"";
 
 
     $results = $connection->query($query);
