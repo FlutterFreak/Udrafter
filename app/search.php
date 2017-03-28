@@ -1,5 +1,8 @@
 
 <?php
+
+session_start();
+
 if (isset ($_GET["submit"])){
     if (isset($_GET["title"])){
         $Title = $_GET["title"];
@@ -7,7 +10,13 @@ if (isset ($_GET["submit"])){
 //connect to database 
         include 'db_connect.php';
         $query= "SELECT * from Job WHERE title LIKE '%" .$Title. "%' OR description LIKE '%" .$Title. "%'";
-        $results = mysqli_query( $query);
+        
+       
+
+
+        $results = $connection->query ($query);
+
+      
 // create while loop and loop through results 
         while ($row = mysql_fetch_array($results)) {
             $title = $row["title"];
