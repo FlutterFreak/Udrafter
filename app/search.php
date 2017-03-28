@@ -33,7 +33,8 @@ echo "<p> xxx  $Title</p> ";
         $date = $row["date"];
 //display the results   
         echo "<ul>\n";
-        echo "<li>" . $title . "\n " . $description . "\n " . $category . "\n " . $wages . "\n " . $company . "\n " . $location . "\n " . $date . "</li>\n";
+        echo "<li>" . $title . "\n </li>\n";
+    echo "<li> $description . \"\n \" . $category . \"\n \" . $wages . \"\n \" . $company . \"\n \" . $location . \"\n \" . $date  </li>\n";
         echo "</ul>";
 
 
