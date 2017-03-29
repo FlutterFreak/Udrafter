@@ -6,7 +6,7 @@ session_start();
 echo " Edit Records";
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
-
+echo $email;
     if (isset ($_POST["name"])) {
         $name = $_POST["name"];
     }
