@@ -11,12 +11,12 @@ $num_results = mysqli_num_rows($results);
 echo "xx". $num_results;
 
 for ($i = 0; $i < $num_results; $i++) {
-   while( $row = mysqli_fetch_array($results)){
+    $row = mysqli_fetch_array($results);
 
        $jobId = $row["jobId"];
 
        echo"xx". $jobid;
-   }
+
 
 
 
