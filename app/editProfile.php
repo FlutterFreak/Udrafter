@@ -50,7 +50,7 @@ if (isset ($_SESSION["email"])) {
         include 'db_connect.php';
 
 
-        $query = "update Employer set name=\"$name\", uniEmail= \"$newEmail\", password = \"$password\"  where uniEmail=\"$uniemail\"";
+        $query = "update Student set name=\"$name\", uniEmail= \"$newEmail\", password = \"$password\"  where uniEmail=\"$uniemail\"";
 
         if ($connection->query($query) === TRUE) {
             echo "Record updated successfully";
