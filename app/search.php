@@ -19,7 +19,7 @@ if (isset ($_GET["submit"])) {
 
     $results = $connection->query ($query_get);
 //  get results
-    $row = mysqli_fetch_array($results);
+
 
 $title = $row["title"];
 $description = $row["description"];
@@ -115,6 +115,7 @@ echo $num_results;
         $date->appendChild($doc->createTextNode($row["date"]));
 
         $node->appendChild( $date);
+
         $root->appendChild ($node);
 
     }
