@@ -55,7 +55,9 @@ if (isset ($_SESSION["email"])) {
         if ($connection->query($query) === TRUE) {
             echo "Record updated successfully";
         }
-        echo "Error updating record: " . $connection->error;
+        else {
+            echo "Error updating record: " . $connection->error;
+        }
 
 
     }
