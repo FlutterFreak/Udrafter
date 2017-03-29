@@ -44,7 +44,7 @@
       echo "<p>Failed registration: " . mysqli_error($connection) . "</p>";
     }
     else {
-      $_SESSION["email"] = $email;
+      $_SESSION["uniemail"] = $uniemail;
       echo "<p>Registration successful</p>";
       echo "<a href = \"student_login.html\"> Student login</a>";
     }

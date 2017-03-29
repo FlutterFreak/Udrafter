@@ -1,14 +1,6 @@
 <?php
 session_start();
-?>
 
-<html>
-<head>
-    <title>Employer Registration</title>
-</head>
-<body>
-
-<?
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
 
