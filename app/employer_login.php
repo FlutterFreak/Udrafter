@@ -36,6 +36,7 @@ if ($num_results > 0) {
     if ($pass == $password) {
         $_SESSION["email"] = $email;
         echo "<p>Login successful, ". $_SESSION["email"] . ".  Click <a href =\" postjob.html\">here</a> to post a job.</p>";
+        echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
     }
     else {
         echo "<p>Invalid login</p>";
