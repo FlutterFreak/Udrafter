@@ -2,6 +2,8 @@
 
 session_start();
 
+echo "Record updated successfully";
+
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
 
