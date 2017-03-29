@@ -10,8 +10,8 @@ $query_get = "select * from Employer where  email=\"$email\"";
 
 $results = $connection->query ($query_get);
 
-$row = mysqli_fetch_array($results);
-while($row = mysql_fetch_array($result))
+
+while($row = mysqli_fetch_array($results))
 {
     $name = $row["name"];
     $email = $row["email"];
