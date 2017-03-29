@@ -7,7 +7,7 @@ if (!isset ($_SESSION["uniemail"])) {
     return;
     $uniemail= $_SESSION["uniemail"];
 
-    echo $uniemail;
+    echo "xx".$uniemail;
     include 'db_connect.php';
     $query_get = "select * from Student where  uniEmail=\"$uniemail\"";
 
