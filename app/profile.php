@@ -11,14 +11,14 @@ $query_get = "select * from Employer where  email=\"$email\"";
 $results = $connection->query ($query_get);
 
 
-while($row = mysqli_fetch_array($results))
-{
+$row = mysqli_fetch_array($results);
+
     $name = $row["name"];
     $email = $row["email"];
     $company = $row["company"];
     $profilePic= $row["profilePic"];
     echo $name;
-}}
+}
 
 ?>
 
