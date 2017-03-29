@@ -31,7 +31,15 @@ $date = $row["date"];
 
     $num_results = mysqli_num_rows ($results);
 
-    if ($num_results == 0) {
+$encode = array();
+
+while($row = mysqli_fetch_assoc($results)) {
+    $encode[] = $row;
+}
+
+echo json_encode($encode);
+
+  /*  if ($num_results == 0) {
         return "Oh no! no results found";
     }
 echo $num_results;
