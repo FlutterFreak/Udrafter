@@ -35,7 +35,7 @@ $query = "select * from Student where  uniEmail=\"$uniemail\"";
 
         if ($pass == $password) {
             $_SESSION["uniemail"] = $uniemail;
-            echo "<p>Login successful, ". $_SESSION["uniemail"] . ".  Click <a href = \"job.html\">here</a> to go to view/search Jobs.</p>";
+            echo "<p>Login successful, ". $_SESSION["uniemail"] . ".  Click <a href = \"search.html\">here</a> to go to view/search Jobs.</p>";
             echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
         }
         else {
