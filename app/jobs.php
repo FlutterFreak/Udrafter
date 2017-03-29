@@ -23,9 +23,10 @@ for ($i = 0; $i < $num_results; $i++) {
         $location = $row["location"];
         $date = $row["date"];
 
-       echo $employerId;
+
 
 
 
 
 }
+echo $employerId;
