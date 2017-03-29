@@ -12,7 +12,7 @@ for ($i = 0; $i < $num_results; $i++) {
 
        $jobId = $row["jobId"];
 
-       echo $jobid;
+       echo"xx". $jobid;
    }
 
 
