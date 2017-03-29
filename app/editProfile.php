@@ -32,10 +32,10 @@ if (isset ($_SESSION["email"])) {
         echo "Error updating record: " . $connection->error;
     }
 }
-/*
+
     else if (isset ($_SESSION["uniemail"])) {
         $uniemail = $_SESSION["uniemail"];
-
+echo $uniemail;
         if (isset ($_POST["name"])) {
             $name = $_POST["name"];
         }
@@ -52,13 +52,13 @@ if (isset ($_SESSION["email"])) {
 
         $query = "update Employer set name=\"$name\", uniEmail= \"$newEmail\", password = \"$password\"  where uniEmail=\"$uniemail\"";
 
-        if ($conn->query($query) === TRUE) {
+        if ($connection->query($query) === TRUE) {
             echo "Record updated successfully";
         }
-        echo "Error updating record: " . $conn->error;
+        echo "Error updating record: " . $connection->error;
 
 
     }
-$conn->close();
+$connection->close();
 ?>
 
