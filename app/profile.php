@@ -24,6 +24,8 @@ if (isset ($_SESSION["email"])) {
     echo "<p>Name:" . $name . "</p>";
     echo "<p>Email:" . $email . "</p>";
     echo "<p>Company:" . $company . "</p>";
+
+    echo "<p>Click <a href = \"edit_employer.html\">here</a>  to edit your profile.</p>";
 }
 else if (isset ($_SESSION["uniemail"])) {
     $uniemail = $_SESSION["uniemail"];
@@ -47,7 +49,10 @@ else if (isset ($_SESSION["uniemail"])) {
     echo "<p>Name:" . $name . "</p>";
     echo "<p> University Email:" . $uniemail . "</p>";
 
+    echo "<p>Click <a href = \"edit_student.html\">here</a>  to edit your profile.</p>";
+
 }
+$conn->close();
 ?>
 
 
