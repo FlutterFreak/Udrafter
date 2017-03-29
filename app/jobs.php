@@ -24,7 +24,7 @@ for ($i = 0; $i < $num_results; $i++) {
         $location = $row["location"];
         $date = $row["date"];
 
-    echo $title."\n";
+    echo "<p>$title.</p>\n";
     echo $description."\n";
     echo $category."\n";
     echo $wages."\n";
