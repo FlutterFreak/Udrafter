@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-echo "xx".$uniemail;
+
 if (!isset ($_SESSION["uniemail"])) {
     echo "<p>Sign In as a student to apply for Jobs. <a href = \"student_login.html\">Login</a>  </p>";
     return;
@@ -9,7 +9,7 @@ if (!isset ($_SESSION["uniemail"])) {
     else {
     $uniemail= $_SESSION["uniemail"];
     }
-    echo "xx".$uniemail;
+
     include 'db_connect.php';
     $query_get = "select * from Student where  uniEmail=\"$uniemail\"";
 
