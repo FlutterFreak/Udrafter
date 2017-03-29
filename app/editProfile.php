@@ -26,7 +26,7 @@ if (isset ($_SESSION["email"])) {
     $query = "update Employer set name=\"$name\", email= \"$newEmail\", password = \"$password\", company= \"$company\"  where email=\"$email\"";
 
 
-    if ($conn->query($query) === TRUE) {
+    if ($connection->query($query) === TRUE) {
         echo "Record updated successfully";
     }
     echo "Error updating record: " . $conn->error;
