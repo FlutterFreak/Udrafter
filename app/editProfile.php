@@ -25,6 +25,14 @@ echo $email;
 
     $query = "update Employer set name=\"$name\", email= \"$newEmail\", password = \"$password\", company= \"$company\"  where email=\"$email\"";
 
+    $results = $connection->query($query);
+
+
+    $row = mysqli_fetch_array($results);
+
+    $name = $row["name"];
+    echo $name;
+
     if ($conn->query($query) === TRUE) {
         echo "Record updated successfully";
     }
