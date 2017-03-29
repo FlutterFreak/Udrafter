@@ -24,13 +24,13 @@ for ($i = 0; $i < $num_results; $i++) {
         $location = $row["location"];
         $date = $row["date"];
 
-    echo $title;
-    echo $description;
-    echo $category;
-    echo $wages;
-    echo $company;
-    echo $location;
-    echo $date;
+    echo $title."\n";
+    echo $description."\n";
+    echo $category."\n";
+    echo $wages."\n";
+    echo $company."\n";
+    echo $location."\n";
+    echo $date."\n";
     echo "<p>Click <a href =\" apply.php\">here</a> to apply.</p>";
 
 
