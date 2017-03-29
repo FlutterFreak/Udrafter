@@ -15,6 +15,7 @@ if (isset ($_SESSION["uniemail"])) {
     echo "<p>You are already logged in.</p>";
     echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
     echo "<p>Click <a href =\" logout.php\">here</a> to logout.</p>";
+    echo "<p>Click <a href =\" jobs.php\">here</a> to view job.</p>";
     return;
 }
 
@@ -35,8 +36,10 @@ $query = "select * from Student where  uniEmail=\"$uniemail\"";
 
         if ($pass == $password) {
             $_SESSION["uniemail"] = $uniemail;
-            echo "<p>Login successful, ". $_SESSION["uniemail"] . ".  Click <a href = \"search.html\">here</a> to go to view/search Jobs.</p>";
+            echo "<p>Login successful, ". $_SESSION["uniemail"] . ".  Click <a href = \"search.html\">here</a> to go to search Jobs.</p>";
+            echo "<p>Click <a href =\" jobs.php\">here</a> to view job.</p>";
             echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
+            echo "<p>Click <a href =\" logout.php\">here</a> to logout.</p>";
         }
         else {
             echo "<p>Invalid login</p>";
