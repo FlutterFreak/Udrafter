@@ -35,7 +35,7 @@ if (isset ($_SESSION["email"])) {
 
     else if (isset ($_SESSION["uniemail"])) {
         $uniemail = $_SESSION["uniemail"];
-echo $uniemail;
+
         if (isset ($_POST["name"])) {
             $name = $_POST["name"];
         }
