@@ -14,6 +14,7 @@ session_start();
 if (isset ($_SESSION["uniemail"])) {
     echo "<p>You are already logged in.</p>";
     echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
+    echo "<p>Click <a href =\" logout.php\">here</a> to logout.</p>";
     return;
 }
 
