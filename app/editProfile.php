@@ -3,7 +3,7 @@
 session_start();
 
 
-
+echo " Edit Records";
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
 
