@@ -43,10 +43,11 @@
     if (!$ret) {
       echo "<p>Failed registration: " . mysqli_error($connection) . "</p>";
     }
-
-    echo "<p>Registration successful</p>";
-    echo "<a href = \"student_login.html\"> Student login</a>";
-    
+    else {
+      $_SESSION["email"] = $email;
+      echo "<p>Registration successful</p>";
+      echo "<a href = \"student_login.html\"> Student login</a>";
+    }
         
   ?>
   
