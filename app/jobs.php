@@ -1,4 +1,5 @@
 <?
+session_start();
 
 include 'db_connect.php';
 
@@ -14,7 +15,7 @@ for ($i = 0; $i < $num_results; $i++) {
     $row = mysqli_fetch_array($results);
 
         $jobId = $row["jobId"];
-        $employerId = $row["employerId"]
+        $employerId = $row["employerId"];
         $title = $row["title"];
         $description = $row["description"];
         $category = $row["category"];
