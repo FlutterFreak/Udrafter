@@ -2,6 +2,8 @@
 session_start();
 
 session_destroy();
-
-header("Location: emplpoyer_login.html");
+if (isset ($_SESSION["email"])) {
+    header("Location: employer_login.html");
+}
+header("Location: student_login.html");
 ?>
