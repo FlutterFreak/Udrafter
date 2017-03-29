@@ -27,7 +27,7 @@ if (isset ($_SESSION["email"])) {
         echo "Record updated successfully";
     }
     echo "Error updating record: " . $conn->error;
-} 
+} /*
     else if (isset ($_SESSION["uniemail"])) {
         $uniemail = $_SESSION["uniemail"];
 
