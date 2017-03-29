@@ -14,6 +14,7 @@ if (isset ($_SESSION["email"])) {
     echo "<p>You are already logged in.</p>";
     echo "<p>Click <a href =\" postjob.html\">here</a> to post a job.</p>";
     echo "<p>Click <a href =\" logout.php\">here</a> to logout.</p>";
+    echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
     return;
 
 }
