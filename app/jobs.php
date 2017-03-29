@@ -4,11 +4,11 @@ include 'db_connect.php';
 
 $query_get = "select * from Job";
 
-echo $query_get;
+
 $results = $connection->query ($query_get);
 
 $num_results = mysqli_num_rows($results);
-echo  $num_results;
+
 
 for ($i = 0; $i < $num_results; $i++) {
     $row = mysqli_fetch_array($results);
