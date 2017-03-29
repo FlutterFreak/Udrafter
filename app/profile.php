@@ -17,8 +17,9 @@ while($row = mysqli_fetch_array($results))
     $email = $row["email"];
     $company = $row["company"];
     $profilePic= $row["profilePic"];
+    echo $name;
 }}
-echo $name;
+
 ?>
 
 
