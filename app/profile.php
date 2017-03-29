@@ -4,7 +4,7 @@ session_start();
 
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
-echo $email;
+
 include 'db_connect.php';
 $query_get = "select * from Employer where  email=\"$email\"";
 
@@ -17,7 +17,7 @@ $row = mysqli_fetch_array($results);
     $email = $row["email"];
     $company = $row["company"];
     $profilePic= $row["profilePic"];
-    echo "xx" .$name ;
+
 }
 
 ?>
@@ -41,14 +41,7 @@ $row = mysqli_fetch_array($results);
         <td valign="top"><div align="left">Company:</div></td>
         <td valign="top"><?php echo $company ?></td>
     </tr>
-    <tr>
-        <td valign="top"><div align="left">Address:</div></td>
-        <td valign="top"><?php echo $address ?></td>
-    </tr>
-    <tr>
-        <td valign="top"><div align="left">Contact No.: </div></td>
-        <td valign="top"><?php echo $contact ?></td>
-    </tr>
+
 </table>
 <p align="center"><a href="index.php"></a></p>
 
