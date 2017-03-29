@@ -25,6 +25,7 @@ echo $email;
 
     $query = "update Employer set name=\"$name\", email= \"$newEmail\", password = \"$password\", company= \"$company\"  where email=\"$email\"";
 
+    echo $query;
     $results = $connection->query($query);
 
 
