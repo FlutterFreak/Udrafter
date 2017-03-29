@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+echo "xx".$uniemail;
 if (!isset ($_SESSION["uniemail"])) {
     echo "<p>Sign In as a student to apply for Jobs. <a href = \"student_login.html\">Login</a>  </p>";
     return;
