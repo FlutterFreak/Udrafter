@@ -24,7 +24,15 @@ for ($i = 0; $i < $num_results; $i++) {
         $location = $row["location"];
         $date = $row["date"];
 
-    echo $employerId;
+    echo $title;
+    echo $description;
+    echo $category;
+    echo $wages;
+    echo $company;
+    echo $location;
+    echo $date;
+    echo "<p>Click <a href =\" apply.php\">here</a> to apply.</p>";
+
 
 
 
