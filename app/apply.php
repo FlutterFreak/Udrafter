@@ -9,7 +9,7 @@ if (!isset ($_SESSION["uniemail"])) {
 
     echo $uniemail;
     include 'db_connect.php';
-    $query_get = "select * from Student where  uniEmail=\"$unimail\"";
+    $query_get = "select * from Student where  uniEmail=\"$uniemail\"";
 
     $results = $connection->query ($query_get);
 
