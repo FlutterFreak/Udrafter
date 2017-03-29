@@ -2,7 +2,8 @@
 
 include 'db_connect.php';
 
-$query_get = "select * from Jobs";
+$query_get = "select * from Job";
+
 echo $query_get;
 $results = $connection->query ($query_get);
 
