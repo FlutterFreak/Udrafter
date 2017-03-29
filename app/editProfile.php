@@ -6,7 +6,7 @@ session_start();
 
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
-echo $email;
+
     if (isset ($_POST["name"])) {
         $name = $_POST["name"];
     }
@@ -28,9 +28,11 @@ echo $email;
 
     if ($connection->query($query) === TRUE) {
         echo "Record updated successfully";
+    }else {
+        echo "Error updating record: " . $connection->error;
     }
-    echo "Error updating record: " . $conn->error;
-} /*
+}
+/*
     else if (isset ($_SESSION["uniemail"])) {
         $uniemail = $_SESSION["uniemail"];
 
