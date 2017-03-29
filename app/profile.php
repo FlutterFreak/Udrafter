@@ -4,7 +4,7 @@
 
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
-
+echo $email;
 include 'db_connect.php';
 $query_get = "select * from Employer where  email=\"$email\"";
 
