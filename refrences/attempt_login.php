@@ -20,7 +20,7 @@
 
   include 'db_connect.php';
 
-    $query = "select * from User where Username="$username"";
+    $query = "select * from User where Username=\"$username\"";
 
 	$results = $connection->query ($query);
     

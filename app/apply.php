@@ -21,7 +21,7 @@ if (!isset ($_SESSION["uniemail"])) {
      echo $jobId;
 
     $query = "insert into Application ( jobId, studentId, employerId) values($jobId, \"$studentId\",\"$employerId\")";
-echo $query;
+     echo $query;
     $ret = $connection->query ($query);
     if (!$ret) {
         echo "<p>Failed to Apply for Job:" . mysqli_error($connection) . "</p>";
