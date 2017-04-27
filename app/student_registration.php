@@ -17,6 +17,7 @@
 		$password= $_POST["password"];
 	}
   
+  
   include 'db_connect.php';
 
     $query_check = "select * from Student where uniEmail=\"$uniemail\"";

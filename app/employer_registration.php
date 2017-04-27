@@ -23,6 +23,11 @@ if (isset ($_POST["company"])) {
     $company = $_POST["company"];
 }
 
+$name = mysql_real_escape_string($_POST['name']);
+$email = mysql_real_escape_string($_POST['email']);
+$company = mysql_real_escape_string($_POST['company']);
+$password = mysql_real_escape_string($_POST['password']);
+
 include 'db_connect.php';
 
 $query_check = "select * from Employer where email=\"$email\"";
@@ -32,13 +37,20 @@ $results = $connection->query ($query_check);
 if (!$results) {
     echo "<p>" . mysql_error() . "</p>";
 }
- 
+
 $num_results = mysqli_num_rows ($results);
 
 if ($num_results != 0) {
-    echo "<p>That user already exists</p>";
-    echo "<a href = \"employer_login.php\">Emplyer login</a>";
-    exit;
+
+    // user already exists
+    // failed
+
+    $response["failed"] = 1;
+
+    // echoing JSON response
+
+    echo json_encode($response);
+
 }
 
 $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$password\",\"$email\",\"$company\")";
@@ -52,11 +64,15 @@ if (!$ret) {
 
     $_SESSION["email"] = $email;
 
-    echo "<p>Registration successful</p>";
-    echo "<a href = \"employer_login.html\"> Employer login</a>";
+$response["success"] = 1;
+
+// echoing JSON response
+
+echo json_encode($response);
+
 
 
 ?>
 
 </body>
-</html>  
+</html>
