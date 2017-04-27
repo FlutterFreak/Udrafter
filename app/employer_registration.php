@@ -35,7 +35,8 @@ $query_check = "select * from Employer where email=\"$email\"";
 $results = $connection->query ($query_check);
 
 if (!$results) {
-    echo "<p>" . mysql_error() . "</p>";
+    $error= mysql_error();
+    echo json_encode($error);
 }
 
 $num_results = mysqli_num_rows ($results);
@@ -63,6 +64,8 @@ if (!$ret) {
 }
 
     $_SESSION["email"] = $email;
+
+// success
 
 $response["success"] = 1;
 
