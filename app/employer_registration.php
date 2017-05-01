@@ -38,8 +38,8 @@ $query_check = "select * from Employer where email=\"$email\"";
 $results = $connection->query ($query_check);
 
 if (!$results) {
-    $error= mysql_error();
-    echo json_encode($error);
+    $json["error"] =  mysql_error();
+    echo json_encode($json);
 }
 
 $num_results = mysqli_num_rows ($results);
@@ -49,7 +49,7 @@ if ($num_results != 0) {
     // user already exists
     // failed
 
-    $response["failed"] = 1;
+    $response["failed"] = 'User Already Exists';
 
     // echoing JSON response
 
@@ -63,14 +63,16 @@ $ret = $connection->query ($query);
 
 
 if (!$ret) {
-    echo "<p>Failed registration: " . mysqli_error($connection) . "</p>";
+
+    $json["error"] =  mysql_error($connection);
+    echo json_encode($json);
 }
 
     $_SESSION["email"] = $email;
 
 // success
 
-$response["success"] = 1;
+$response["success"] = 'Registration Sucessfull' . $email;
 
 // echoing JSON response
 
