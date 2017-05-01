@@ -10,7 +10,8 @@ session_start();
 
 <?php
 
-header('Content-type: Application/json');
+header('Content-type: application/json');
+
 if (isset ($_POST["name"])) {
     $name1 = $_POST["name"];
 }
