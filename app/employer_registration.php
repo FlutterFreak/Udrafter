@@ -23,7 +23,7 @@ if (isset ($_POST["company"])) {
 if(!empty($name) && !empty($email) && !empty($password) && !empty($company)){
 
  $hashed_password = password_hash($password, PASSWORD_DEFAULT); //here i am hashing the password
-    
+
 }else {
     echo json_encode('Please provide all Fields');
 }
@@ -41,16 +41,11 @@ if (!$results) {
 $num_results = mysqli_num_rows ($results);
 
 if ($num_results != 0) {
-
-    // user already exists
+   // user already exists
     // failed
-
-    $response["failed"] = 'User Already Exists';
-
-    // echoing JSON response
-
-    echo json_encode($response);
-
+ $response["failed"] = 'User Already Exists';
+ // echoing JSON response
+  echo json_encode($response);
 }
 
 $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$hashed_password\",\"$email\",\"$company\")";
@@ -74,7 +69,7 @@ $response["success"] = 'Registration Sucessfull' . $email;
 
 echo json_encode($response);
 
-echo json_encode($email);
+
 
 ?>
 
