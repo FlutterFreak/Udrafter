@@ -27,7 +27,8 @@ $name = mysql_real_escape_string($_POST['name']);
 $email = mysql_real_escape_string($_POST['email']);
 $company = mysql_real_escape_string($_POST['company']);
 $password = mysql_real_escape_string($_POST['password']);
-echo json_encode($name);
+
+echo $name;
 
 
 include 'db_connect.php';
