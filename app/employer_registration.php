@@ -23,10 +23,7 @@ if (isset ($_POST["company"])) {
     $company = $_POST["company"];
 }
 
-$name = mysql_real_escape_string($_POST['name']);
-$email = mysql_real_escape_string($_POST['email']);
-$company = mysql_real_escape_string($_POST['company']);
-$password = mysql_real_escape_string($_POST['password']);
+
 
 echo $name;
 
