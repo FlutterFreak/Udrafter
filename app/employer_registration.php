@@ -2,11 +2,6 @@
 session_start();
 ?>
 
-<html>
-<head>
-    <title>Employer Registration</title>
-</head>
-<body>
 
 <?php
 
