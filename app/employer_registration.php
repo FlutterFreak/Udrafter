@@ -22,15 +22,12 @@ if (isset ($_POST["company"])) {
 
 if(!empty($name1) && !empty($email1) && !empty($password1) && !empty($company1)){
 
-    $name2= strip_tags($name1);
-    $email2= strip_tags($email1);
-    $password2= strip_tags($password1);
-    $company2= strip_tags($company1);
+    $name= strip_tags($name1);
+    $email= strip_tags($email1);
+    $password= strip_tags($password1);
+    $company= strip_tags($company1);
 
-    $name = $connection->real_escape_string($name2);
-    $email = $connection->real_escape_string($email2);
-    $password = $connection->real_escape_string($password2);
-    $company = $connection->real_escape_string($company2);
+
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT); //here i am hashing the password
 }else {
