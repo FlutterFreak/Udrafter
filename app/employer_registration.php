@@ -27,6 +27,7 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)){
 }else {
     echo json_encode('Please provide all Fields');
 }
+
 include 'db_connect.php';
 
 $query_check = "select * from Employer where email=\"$email\"";
