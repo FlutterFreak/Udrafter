@@ -37,9 +37,9 @@ if(!empty($name1) && !empty($email1) && !empty($password1) && !empty($company1))
     $company = $connection->real_escape_string($company2);
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT); //here i am hashing the password
+}else {
+    echo json_encode('Please provide all Fields');
 }
-echo json_encode('Please provide all Fields');
-
 include 'db_connect.php';
 
 $query_check = "select * from Employer where email=\"$email\"";
