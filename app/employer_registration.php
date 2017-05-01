@@ -10,23 +10,35 @@ session_start();
 
 <?php
 
+header('Content-type: Application/json');
 if (isset ($_POST["name"])) {
-    $name = $_POST["name"];
+    $name1 = $_POST["name"];
 }
 if (isset ($_POST["email"])) {
-    $email = $_POST["email"];
+    $email1 = $_POST["email"];
 }
 if (isset ($_POST["password"])) {
-    $password= $_POST["password"];
+    $password1= $_POST["password"];
 }
 if (isset ($_POST["company"])) {
-    $company = $_POST["company"];
+    $company1 = $_POST["company"];
 }
 
+if(!empty($name1) && !empty($email1) && !empty($password1) && !empty($company1)){
 
+    $name2= strip_tags($name1);
+    $email2= strip_tags($email1);
+    $password2= strip_tags($password1);
+    $company2= strip_tags($company1);
 
-echo $name;
+    $name = $connection->real_escape_string($name2);
+    $email = $connection->real_escape_string($email2);
+    $password = $connection->real_escape_string($password2);
+    $company = $connection->real_escape_string($company2);
 
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT); //here i am hashing the password
+}
+echo json_encode('Please provide all Fields');
 
 include 'db_connect.php';
 
@@ -54,7 +66,7 @@ if ($num_results != 0) {
 
 }
 
-$query = "insert into Employer (name, password, email, company) values (\"$name\", \"$password\",\"$email\",\"$company\")";
+$query = "insert into Employer (name, password, email, company) values (\"$name\", \"$hashed_password\",\"$email\",\"$company\")";
 
 $ret = $connection->query ($query);
 
