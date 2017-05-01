@@ -87,5 +87,4 @@ echo json_encode($email);
 
 ?>
 
-</body>
-</html>
+
