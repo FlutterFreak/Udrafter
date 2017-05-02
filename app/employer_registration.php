@@ -29,7 +29,7 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
 
     $results = $connection->query($query_check);
 
-echo $results;
+
     if ($num_results != 0) {
         $response["failed"] = 'User Already Exists';
         // echoing JSON response
@@ -42,7 +42,7 @@ echo $results;
 
     $ret = $connection->query($query);
 
-echo $ret;
+
     if (!$ret) {
 
         $json["error"] = mysql_error($connection);
