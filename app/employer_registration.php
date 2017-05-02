@@ -34,7 +34,7 @@ if (isset ($_POST["company"])) {
         echo json_encode($response);
         exit;
     }
-
+else {
     $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$password\",\"$email\",\"$company\")";
 
 
@@ -53,6 +53,6 @@ if (isset ($_POST["company"])) {
 
     $response["success"] = 'Registration Sucessfull' . "Welcome  " . $email;
     echo json_encode($response);
-
+}
 
 ?>
