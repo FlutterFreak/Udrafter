@@ -38,6 +38,7 @@ echo  $query_check;
     }
 
     $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$hashed_password\",\"$email\",\"$company\")";
+    echo $query;
 
     $ret = $connection->query($query);
 
