@@ -27,6 +27,7 @@ if (isset ($_POST["company"])) {
 
     $results = $connection->query($query_check);
 
+      $num_results = mysqli_num_rows ($results);
 
     if ($num_results != 0) {
         $response["failed"] = 'User Already Exists';
