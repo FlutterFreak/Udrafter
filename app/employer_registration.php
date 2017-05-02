@@ -31,7 +31,7 @@ if (isset ($_POST["company"])) {
      $results = $connection->query($query_check);
 
      if (!$results) {
-         $json["error"] = mysql_error();
+         $json["error"] = mysql_error($connection);
          echo json_encode($json);
      }
 
@@ -51,8 +51,6 @@ if (isset ($_POST["company"])) {
          }
 
          $_SESSION["email"] = $email;
-
-// success
 
          $response["success"] = 'Registration Sucessfull' . "" . $email;
 
