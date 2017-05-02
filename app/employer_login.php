@@ -2,53 +2,48 @@
 session_start();
 ?>
 
-<html>
-<head>
-    <title>Employer Login</title>
-</head>
-<body>
+
 
 <?php
 
-if (isset ($_SESSION["email"])) {
-    echo "<p>You are already logged in.</p>";
-    echo "<p>Click <a href =\" postjob.html\">here</a> to post a job.</p>";
-    echo "<p>Click <a href =\" logout.php\">here</a> to logout.</p>";
-    echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
-    return;
+if (!isset ($_SESSION["email"])) {
 
-}
 
-$email = $_POST["email"];
-$password = $_POST["password"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
 
-include 'db_connect.php';
+    include 'db_connect.php';
 
-$query = "select * from Employer where  email=\"$email\"";
+    $query = "select * from Employer where  email=\"$email\"";
 
-$results = $connection->query ($query);
+    $results = $connection->query ($query);
 
-$num_results = mysqli_num_rows ($results);
+    $num_results = mysqli_num_rows ($results);
 
-if ($num_results > 0) {
-    $row = mysqli_fetch_array ($results);
-    $pass = $row["password"];
+    if ($num_results > 0) {
+        $row = mysqli_fetch_array ($results);
+        $pass = $row["password"];
 
-    if ($pass == $password) {
-        $_SESSION["email"] = $email;
-        echo "<p>Login successful, ". $_SESSION["email"] . ".  Click <a href =\" postjob.html\">here</a> to post a job.</p>";
-        echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
+        if ($pass == $password) {
+            $_SESSION["email"] = $email;
+
+            $response["Success"] = 'Login successful'. "". $_SESSION["email"];
+            echo json_encode($response);
+
+        }
+        else {
+            $response["Failed"] = 'email or password is not correct, please enter correct details';
+            echo json_encode($response);
+        }
     }
     else {
-        echo "<p>Invalid login</p>";
-        echo "<a href = \"employer_login.html\">Try again</a>";
+        $response["Failed"] = 'Not a valid user, please Register to Sign In';
+        echo json_encode($response);
     }
+ }else {
+    $response["Success"] = 'you are already logged in';
+    echo json_encode($response);
 }
-else {
-    echo "<p>Invalid login</p>";
-    echo "<a href = \"employer_registration.html\">Register</a>";
-}
-?>
 
-</body>
-</html>  
+
+?>
