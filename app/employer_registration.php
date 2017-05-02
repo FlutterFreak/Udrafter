@@ -56,7 +56,8 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
     }
 }
 else {
-    echo json_encode('Please provide all Fields');
+    $response["Empty"] = 'Please provide all Fields';
+    echo json_encode($response);
 }
 
 ?>
