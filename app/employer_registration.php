@@ -37,13 +37,8 @@ if (isset ($_POST["company"])) {
 
      $num_results = mysqli_num_rows($results);
 
-     if ($num_results != 0) {
-         // user already exists
-         // failed
-         $response["failed"] = 'User Already Exists';
-         // echoing JSON response
-         echo json_encode($response);
-     } else {
+     if ($num_results = 0) {
+
          $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$hashed_password\",\"$email\",\"$company\")";
 
          $ret = $connection->query($query);
@@ -61,11 +56,16 @@ if (isset ($_POST["company"])) {
 
          $response["success"] = 'Registration Sucessfull' . "" . $email;
 
-// echoing JSON response
 
+
+
+     } else {
+
+         // user already exists
+         // failed
+         $response["failed"] = 'User Already Exists';
+         // echoing JSON response
          echo json_encode($response);
-
-
 
 
      }}
