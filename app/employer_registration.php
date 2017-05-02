@@ -20,40 +20,43 @@ if (isset ($_POST["company"])) {
     $company = $_POST["company"];
 }
 
-
+if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
 
     $query_check = "select * from Employer where email=\"$email\"";
 
 
     $results = $connection->query($query_check);
 
-      $num_results = mysqli_num_rows ($results);
+    $num_results = mysqli_num_rows($results);
 
     if ($num_results != 0) {
         $response["failed"] = 'User Already Exists';
         // echoing JSON response
         echo json_encode($response);
         exit;
-    }
-else {
-    $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$password\",\"$email\",\"$company\")";
+    } else {
+        $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$password\",\"$email\",\"$company\")";
 
 
-    $ret = $connection->query($query);
+        $ret = $connection->query($query);
 
 
-    if (!$ret) {
+        if (!$ret) {
 
-        $json["error"] = mysql_error($connection);
-        echo json_encode($json);
-    }
+            $json["error"] = mysql_error($connection);
+            echo json_encode($json);
+        }
 
-    $_SESSION["email"] = $email;
+        $_SESSION["email"] = $email;
 
 // success
 
-    $response["success"] = 'Registration Sucessfull' . "Welcome  " . $email;
-    echo json_encode($response);
+        $response["success"] = 'Registration Sucessfull' . "Welcome  " . $email;
+        echo json_encode($response);
+    }
+}
+else {
+    echo json_encode('Please provide all Fields');
 }
 
 ?>
