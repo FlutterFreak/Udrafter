@@ -35,7 +35,7 @@ if (isset ($_POST["company"])) {
         exit;
     }
 
-    $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$hashed_password\",\"$email\",\"$company\")";
+    $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$password\",\"$email\",\"$company\")";
 
 
     $ret = $connection->query($query);
