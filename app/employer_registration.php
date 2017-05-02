@@ -56,22 +56,10 @@ if (isset ($_POST["company"])) {
 
          $response["success"] = 'Registration Sucessfull' . "" . $email;
 
-
-
-
-     } else {
-
-         // user already exists
-         // failed
-         $response["failed"] = 'User Already Exists';
-         // echoing JSON response
-         echo json_encode($response);
-
-
-     }}
- else {
-         echo json_encode('Please provide all Fields');
      }
+ }
+
+
 
 
 ?>
