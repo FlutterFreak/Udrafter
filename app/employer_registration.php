@@ -58,6 +58,8 @@ echo  $query_check;
 
 
 }else {
+    echo  $query_check;
+    echo $query;
     $response["Empty"] = 'Please provide all Fields';
     echo json_encode( $response);
 }
