@@ -20,9 +20,7 @@ if (isset ($_POST["company"])) {
     $company = $_POST["company"];
 }
 
-if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
 
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT); //here i am hashing the password
 
     $query_check = "select * from Employer where email=\"$email\"";
 
@@ -57,9 +55,4 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
     echo json_encode($response);
 
 
-}else {
-
-    $response["Empty"] = 'Please provide all Fields';
-    echo json_encode( $response);
-}
 ?>
