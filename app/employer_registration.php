@@ -55,10 +55,11 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
 // success
 
     $response["success"] = 'Registration Sucessfull' . "" . $email;
-
+    echo json_encode($response);
 
 
 }else {
-    echo json_encode('Please provide all Fields');
+    $response["Empty"] = 'Please provide all Fields';
+    echo json_encode( $response);
 }
 ?>
