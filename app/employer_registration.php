@@ -54,7 +54,7 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
 
 // success
 
-    $response["success"] = 'Registration Sucessfull' . "" . $email;
+    $response["success"] = 'Registration Sucessfull' . "  " . $email;
     echo json_encode($response);
 
 
