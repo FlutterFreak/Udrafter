@@ -26,19 +26,17 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
 
     $query_check = "select * from Employer where email=\"$email\"";
 
-
+echo  $query_check;
     $results = $connection->query($query_check);
 
-    if (!$results) {
-        $json["error"] = mysql_error();
-        echo json_encode($json);
-    }
+
     if ($num_results != 0) {
         $response["failed"] = 'User Already Exists';
         // echoing JSON response
         echo json_encode($response);
         exit;
     }
+
     $query = "insert into Employer (name, password, email, company) values (\"$name\", \"$hashed_password\",\"$email\",\"$company\")";
 
     $ret = $connection->query($query);
