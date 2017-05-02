@@ -20,7 +20,7 @@ if (isset ($_POST["company"])) {
     $company1 = $_POST["company"];
 }
 
-if(!empty($name) && !empty($email) && !empty($password) && !empty($company)){
+//if(!empty($name) && !empty($email) && !empty($password) && !empty($company)){
 
  $hashed_password = password_hash($password, PASSWORD_DEFAULT); //here i am hashing the password
 
@@ -69,9 +69,9 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)){
 
     $connection->close();
 
-}else {
-    echo json_encode('Please provide all Fields');
-}
+//}else {
+   // echo json_encode('Please provide all Fields');
+//}
 
 
 ?>
