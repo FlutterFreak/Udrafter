@@ -59,14 +59,14 @@ if (isset ($_POST["company"])) {
 
 // success
 
-         $response["success"] = 'Registration Sucessfull' . $email;
+         $response["success"] = 'Registration Sucessfull' . "" . $email;
 
 // echoing JSON response
 
          echo json_encode($response);
 
 
-         $connection->close();
+
 
      }}
  else {
