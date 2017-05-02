@@ -4,7 +4,7 @@ session_start();
 
 
 <?php
-
+// http://udrafter2017.azurewebsites.net
 header('Content-type: application/json');
 
 if (isset ($_POST["name"])) {
@@ -67,7 +67,7 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)){
     echo json_encode($response);
 
 
-
+    $connection->close();
 
 }else {
     echo json_encode('Please provide all Fields');
