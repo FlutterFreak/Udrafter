@@ -32,7 +32,7 @@ for ($i = 0; $i < $num_results; $i++) {
     echo "<p>$location.</p>\n";
     echo "<p>$date.</p>\n";
 
-    echo "<p>Click <a href =\" apply.php?id=" . $jobId . ""\">here</a> to apply.</p>";
+  
 
 
 
