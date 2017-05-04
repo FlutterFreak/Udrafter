@@ -1,6 +1,6 @@
 <?
 session_start();
-
+//jobs
 include 'db_connect.php';
 
 $query_get = "select * from Job";
