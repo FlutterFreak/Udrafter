@@ -29,7 +29,7 @@ for ($i = 0; $i < $num_results; $i++) {
     $encode = array();
 
     while($row = mysqli_fetch_assoc($results)) {
-        $encode[jobs] = $row;
+        array_push ($encode, $row);
     }
 
     echo json_encode($encode);
