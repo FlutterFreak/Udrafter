@@ -24,18 +24,16 @@ for ($i = 0; $i < $num_results; $i++) {
         $location = $row["location"];
         $date = $row["date"];
 
-    echo "<p>$title.</p>\n";
-    echo "<p>$description.</p>\n";
-    echo "<p>$category.</p>\n";
-    echo "<p>$wages.</p>\n";
-    echo "<p>$company.</p>\n";
-    echo "<p>$location.</p>\n";
-    echo "<p>$date.</p>\n";
+    
 
-  
+    $encode = array();
 
+    while($row = mysqli_fetch_assoc($results)) {
+        $encode[] = $row;
+    }
 
-
-
-
+    echo json_encode($encode);
 }
+
+$connection->close();
+?>

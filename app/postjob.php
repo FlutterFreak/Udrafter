@@ -5,10 +5,11 @@ session_start();
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
 
-    echo "<p>$email<?p>";
+    
 }else {
-    echo "<p>Please sign in as Employer</p>";
-    echo "<a href = \"employer_login.html\">Login</a>";
+
+    $json['response']= "Please sign in as Employer to post Jobs";
+     echo json_encode($json);
 }
 
 
@@ -52,9 +53,15 @@ if (isset ($_GET["date"])) {
 $query = "insert into job (employerId, title, description,category, wages, company, location, date) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
 $ret = $connection->query ($query); 
 if (!$ret) {
-    echo "<p>Failed to post Job:" . mysqli_error($connection) . "</p>";
+
+    $json['failed']= "Failed to post Job:" . mysqli_error($connection);
+
+    echo json_encode($json);
+
 } else{
-    echo "<p>Your Job is Sucessfully Posted</p>";
+    $json['success']= "Your Have succesfully posted this job";
+
+    echo json_encode($json);
 }
 
 

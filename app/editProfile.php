@@ -27,9 +27,12 @@ if (isset ($_SESSION["email"])) {
 
 
     if ($connection->query($query) === TRUE) {
-        echo "Record updated successfully";
+         $json['success']= "Record updated successfully";
+
+        echo json_encode($json);
     }else {
-        echo "Error updating record: " . $connection->error;
+        $json['failed']= "Error updating record: " . $connection->error;
+        echo json_encode($json); 
     }
 }
 
@@ -53,10 +56,12 @@ if (isset ($_SESSION["email"])) {
         $query = "update Student set name=\"$name\", uniEmail= \"$newEmail\", password = \"$password\"  where uniEmail=\"$uniemail\"";
 
         if ($connection->query($query) === TRUE) {
-            echo "Record updated successfully";
-        }
-        else {
-            echo "Error updating record: " . $connection->error;
+            $json['success']= "Record updated successfully";
+
+            echo json_encode($json);
+        }else {
+            $json['failed']= "Error updating record: " . $connection->error;
+            echo json_encode($json);
         }
 
 

@@ -43,16 +43,20 @@ else if (isset ($_SESSION["uniemail"])) {
     $uniemail = $row["uniemail"];
     $profilePic = $row["profilePic"];
 
-    echo "<p>Your Profile Information</p>";
-    echo "<p><img src= $profilePic </p>";
 
-    echo "<p>Name:" . $name . "</p>";
-    echo "<p> University Email:" . $uniemail . "</p>";
+    $num_results = mysqli_num_rows ($results);
 
-    echo "<p>Click <a href = \"edit_student.html\">here</a>  to edit your profile.</p>";
+    $encode = array();
+
+    while($row = mysqli_fetch_assoc($results)) {
+        $encode[] = $row;
+    }
+
+    echo json_encode($encode);
+
 
 }
-$conn->close();
+$connection->close();
 ?>
 
 

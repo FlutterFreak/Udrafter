@@ -16,40 +16,48 @@
 	if (isset ($_POST["password"])) {
 		$password= $_POST["password"];
 	}
-  
-  
-  include 'db_connect.php';
+
+
+  if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
+    include 'db_connect.php';
 
     $query_check = "select * from Student where uniEmail=\"$uniemail\"";
 
-	$results = $connection->query ($query_check);
-    
+    $results = $connection->query($query_check);
+
     if (!$results) {
-      echo "<p>" . mysql_error() . "</p>";
+      $response["failed"] = mysql_error($connection);
+      echo json_encode($response);
     }
-     
-    $num_results = mysqli_num_rows ($results);
+
+    $num_results = mysqli_num_rows($results);
 
     if ($num_results != 0) {
-      echo "<p>That user already exists</p>";
-      echo "<a href = \"student_login.php\">Student login</a>";
+      $response["failed"] = 'User Already Exists';
+      // echoing JSON response
+      echo json_encode($response);
       exit;
     }
-    
+
     $query = "insert into Student (name, password, uniEmail) values (\"$name\", \"$password\",\"$uniemail\")";
-    
-	$ret = $connection->query ($query);
-    
+
+    $ret = $connection->query($query);
+
 
     if (!$ret) {
-      echo "<p>Failed registration: " . mysqli_error($connection) . "</p>";
-    }
-    else {
+      $json["error"] = mysql_error($connection);
+      echo json_encode($json);
+    } else {
       $_SESSION["uniemail"] = $uniemail;
-      echo "<p>Registration successful</p>";
-      echo "<a href = \"student_login.html\"> Student login</a>";
+
+      $response["success"] = 'Registration Sucessfull' . "Welcome  " . $email;
+      echo json_encode($response);
     }
-        
+  }else {
+
+    $response["Empty"] = 'Please provide all Fields';
+    echo json_encode($response);
+  }
   ?>
   
   </body>
