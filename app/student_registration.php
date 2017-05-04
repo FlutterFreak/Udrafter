@@ -57,7 +57,7 @@
 
     $response["Empty"] = 'Please provide all Fields';
     echo json_encode($response);
-    echo json_encode($response);
+   
     
   }
   ?>
