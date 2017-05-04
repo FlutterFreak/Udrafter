@@ -10,7 +10,7 @@ $results = $connection->query ($query_get);
 
 $num_results = mysqli_num_rows($results);
 
-
+/*
 for ($i = 0; $i < $num_results; $i++) {
     $row = mysqli_fetch_array($results);
 
@@ -25,7 +25,7 @@ for ($i = 0; $i < $num_results; $i++) {
         $date = $row["date"];
 
     
-
+*/
     $encode = array();
 
     while($row = mysqli_fetch_assoc($results)) {
@@ -33,7 +33,7 @@ for ($i = 0; $i < $num_results; $i++) {
     }
 
     echo json_encode($encode);
-}
+//}
 //
 $connection->close();
 ?>
