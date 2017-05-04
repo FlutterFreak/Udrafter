@@ -2,6 +2,7 @@
 session_start();
 ?>
 
+//student login
 
 <html>
 <head>
@@ -11,46 +12,39 @@ session_start();
 
 <?php
 
-if (isset ($_SESSION["uniemail"])) {
-    echo "<p>You are already logged in.</p>";
-    echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
-    echo "<p>Click <a href =\" logout.php\">here</a> to logout.</p>";
-    echo "<p>Click <a href =\" jobs.php\">here</a> to view job.</p>";
-    return;
-}
+if (!isset ($_SESSION["uniemail"])) {
 
-$uniemail = $_POST["uniemail"];
-$password = $_POST["password"];
 
-include 'db_connect.php';
+    $uniemail = $_POST["uniemail"];
+    $password = $_POST["password"];
 
-$query = "select * from Student where  uniEmail=\"$uniemail\"";
+    include 'db_connect.php';
 
-	$results = $connection->query ($query);
-    
-    $num_results = mysqli_num_rows ($results);
+    $query = "select * from Student where  uniEmail=\"$uniemail\"";
 
-  	if ($num_results > 0) {
-        $row = mysqli_fetch_array ($results);
+    $results = $connection->query($query);
+
+    $num_results = mysqli_num_rows($results);
+
+    if ($num_results > 0) {
+        $row = mysqli_fetch_array($results);
         $pass = $row["password"];
 
         if ($pass == $password) {
             $_SESSION["uniemail"] = $uniemail;
-            echo "<p>Login successful, ". $_SESSION["uniemail"] . ".  Click <a href = \"search.html\">here</a> to go to search Jobs.</p>";
-            echo "<p>Click <a href =\" jobs.php\">here</a> to view job.</p>";
-            echo "<p>Click <a href = \"profile.php\">here</a>  to view/edit your profile.</p>";
-            echo "<p>Click <a href =\" logout.php\">here</a> to logout.</p>";
+            $response["Success"] = 'Login successful' . "" . $_SESSION["uniemail"];
+            echo json_encode($response);
+        } else {
+            $response["Failed"] = 'email or password is not correct, please enter correct details';
+            echo json_encode($response);
         }
-        else {
-            echo "<p>Invalid login</p>";
-            echo "<a href = \"student_login.html\">Try again</a>";
-        }
-    }
-    else {
-        echo "<p>Invalid login</p>";
-        echo "<a href = \"student_registration.html\">Register</a>";
-    }
+    } else {
+        $response["Failed"] = 'Not a valid user, please Register to Sign In';
+        echo json_encode($response);
+    }}
+else {
+    $response["Success"] = 'you are already logged in';
+    echo json_encode($response);
+}
   ?>
 
-</body>
-</html>  
