@@ -3,11 +3,11 @@
   <?php
   include 'db_connect.php';
   header('Content-type: application/json');
+
   if (isset ($_POST["name"])) {
       $name = $_POST["name"];
   }
-
-  if (isset ($_POST["uniemail"])) {
+ if (isset ($_POST["uniemail"])) {
       $uniemail = $_POST["uniemail"];
   }
 	if (isset ($_POST["password"])) {
@@ -55,7 +55,7 @@
     $response["Empty"] = 'Please provide all Fields';
     echo json_encode($response);
    
-    
+   //
   }
   ?>
   
