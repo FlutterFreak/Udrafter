@@ -47,7 +47,7 @@
     } else {
       $_SESSION["uniemail"] = $uniemail;
 
-      $response["success"] = 'Registration Sucessfull' . "Welcome  " . $email;
+      $response["success"] = 'Registration Sucessfull' . "Welcome  " . $uniemail;
       echo json_encode($response);
     }
   }else {
