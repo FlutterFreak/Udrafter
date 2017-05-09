@@ -2,13 +2,6 @@
 session_start();
 ?>
 
-//student login
-
-<html>
-<head>
-    <title>Student Login</title>
-</head>
-<body>
 
 <?php
 
