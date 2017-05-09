@@ -15,7 +15,7 @@
 	}
 
 
-  if(!empty($name) && !empty($email) && !empty($password) ) {
+  if(!empty($name) && !empty($uniemail) && !empty($password)) {
     include 'db_connect.php';
 
     $query_check = "select * from Student where uniEmail=\"$uniemail\"";
