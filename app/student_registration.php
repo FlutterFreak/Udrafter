@@ -1,11 +1,8 @@
-<html>
-  <head>  
-    <title>Student Registration</title>
-  </head>
-  <body>
+
   
   <?php
-
+  include 'db_connect.php';
+  header('Content-type: application/json');
   if (isset ($_POST["name"])) {
       $name = $_POST["name"];
   }
@@ -62,5 +59,4 @@
   }
   ?>
   
-  </body>
-</html>  
+ 

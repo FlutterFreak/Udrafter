@@ -2,7 +2,8 @@
 <?php
 
 session_start();
-
+include 'db_connect.php';
+header('Content-type: application/json');
 if (isset ($_GET["submit"])) {
     if (isset($_GET["title"])) {
         $Title = $_GET["title"];

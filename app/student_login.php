@@ -4,7 +4,8 @@ session_start();
 
 
 <?php
-
+include 'db_connect.php';
+header('Content-type: application/json');
 if (!isset ($_SESSION["uniemail"])) {
 
 

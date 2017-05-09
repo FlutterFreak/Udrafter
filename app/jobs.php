@@ -3,6 +3,7 @@ session_start();
 //jobs
 include 'db_connect.php';
 
+header('Content-type: application/json');
 $query_get = "select * from Job";
 
 
