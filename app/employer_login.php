@@ -41,7 +41,7 @@ if (!isset ($_SESSION["email"])) {
         echo json_encode($response);
     }
  }else {
-    $response["Success"] = 'you are already logged in';
+    $response["LoggedIn"] = 'you are already logged in';
     echo json_encode($response);
 }
 
