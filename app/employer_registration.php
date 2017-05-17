@@ -31,7 +31,7 @@ if(!empty($name) && !empty($email) && !empty($password) && !empty($company)) {
     $num_results = mysqli_num_rows($results);
 
     if (!$results) {
-        $response["failed"] = mysql_error($connection);
+        $response["error"] = mysql_error($connection);
         echo json_encode($response);
     }
 
@@ -64,7 +64,7 @@ else {
 }
 }else {
 
-    $response["Empty"] = 'Please provide all Fields';
+    $response["empty"] = 'Please provide all Fields';
     echo json_encode( $response);
 }
 $connection->close();

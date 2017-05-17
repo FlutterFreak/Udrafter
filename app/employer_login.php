@@ -32,7 +32,7 @@ if (!isset ($_SESSION["email"])) {
 
         }
         else {
-            $response["Failed"] = 'email or password is not correct, please enter correct details';
+            $response["Incorrect"] = 'email or password is not correct, please enter correct details';
             echo json_encode($response);
         }
     }
