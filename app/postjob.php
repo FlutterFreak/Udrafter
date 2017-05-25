@@ -51,7 +51,7 @@ if (isset ($_GET["date"])) {
 
 
 
-$query = "insert into job (employerId, title, description,category, wages, company, location, date) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
+$query = "insert into job (employerId, title, description,category, wages, company, location, (DATE_FORMAT(date,\"%m/%d/%Y\"), ) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
 $ret = $connection->query ($query); 
 if (!$ret) {
 
