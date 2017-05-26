@@ -23,14 +23,14 @@
 
     $query = "DROP TABLE  Job";
     $ret = $connection->query ($query);
-
+*/
     $query = "DROP TABLE  Application";
     $ret = $connection->query ($query);
 
     $query = "DROP TABLE  Feedback";
     $ret = $connection->query ($query);
 
-    */
+
     $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT,, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, profilePic LONGBLOB, PRIMARY KEY (studentId))";
 	$ret = $connection->query ($query);
 
@@ -41,13 +41,13 @@
                jobPic LONGBLOB,  PRIMARY KEY (jobId),  FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
-    $query = "CREATE TABLE Application( applicationId INT(10) NOT NULL AUTO_INCREMENT, jobId INT NOT NULL, studentId INT NOT NULL ,employerId INT NOT NULL, isCompleted BOOLEAN, PRIMARY KEY (applicationId),
+    $query = "CREATE TABLE Application( applicationId INT(10) NOT NULL AUTO_INCREMENT, jobId INT NOT NULL, studentId INT NOT NULL ,employerId INT NOT NULL, isCompleted BOOLEAN NOT NULL, PRIMARY KEY (applicationId),
                FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (jobId) REFERENCES Job(jobId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
-    $query = "CREATE TABLE Feedback( feedbackId INT(10) NOT NULL AUTO_INCREMENT, studentId INT NOT NULL ,employerId INT NOT NULL, comments VARCHAR (1000), PRIMARY KEY (feedbackId),
+    $query = "CREATE TABLE Feedback( feedbackId INT(10) NOT NULL AUTO_INCREMENT, studentId INT NOT NULL ,employerId INT NOT NULL, comments VARCHAR (1000), isStudent BOOLEAN NOT NULL, PRIMARY KEY (feedbackId),
               FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
