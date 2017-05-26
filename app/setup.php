@@ -9,13 +9,13 @@
    include 'db_connect.php';
 
 
-    $query = "DROP TABLE  user";
+    $query = "DROP TABLE  Rating";
     $ret = $connection->query ($query);
 
-    $query = "DROP TABLE assessmententry";
+    $query = "DROP TABLE Chat";
     $ret = $connection->query ($query);
 
-    $query = "DROP TABLE  Student";
+   /* $query = "DROP TABLE  Student";
 	$ret = $connection->query ($query);
 
     $query = "DROP TABLE Employer";
@@ -30,7 +30,7 @@
     $query = "DROP TABLE  Feedback";
     $ret = $connection->query ($query);
 
-    
+    */
     $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT,, name Varchar (100) NOT NULL, password varchar (10) NOT NULL, uniEmail Varchar (100) NOT NULL, profilePic LONGBLOB, PRIMARY KEY (studentId))";
 	$ret = $connection->query ($query);
 
@@ -55,12 +55,13 @@
     $query = "CREATE TABLE Rating(rateId INT(10) NOT NULL AUTO_INCREMENT, studentId INT NOT NULL ,employerId INT NOT NULL, starRank INT(10) NOT NULL,PRIMARY KEY (rateId), 
                 FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
+    $ret = $connection->query ($query);
 
     $query = "CREATE TABLE Chat(chatId INT(10) NOT NULL AUTO_INCREMENT,studentId INT NOT NULL ,employerId INT NOT NULL, timestamp TIMESTAMP  NOT NULL,
                message VARCHAR (2000),PRIMARY KEY (chatId),
                FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE )";
-
+ $ret = $connection->query ($query);
 
     $query = "insert into Student (name, password, uniEmail) values (\"nirdesh\", \"showtime\",\"abc@rgu.ac.uk\")";
            $ret = $connection->query ($query);
