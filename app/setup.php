@@ -41,7 +41,7 @@
                jobPic LONGBLOB,  PRIMARY KEY (jobId),  FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
-    $query = "CREATE TABLE Application( applicationId INT(10) NOT NULL AUTO_INCREMENT, jobId INT NOT NULL, studentId INT NOT NULL ,employerId INT NOT NULL, completed BOOLEAN, PRIMARY KEY (applicationId),
+    $query = "CREATE TABLE Application( applicationId INT(10) NOT NULL AUTO_INCREMENT, jobId INT NOT NULL, studentId INT NOT NULL ,employerId INT NOT NULL, isCompleted BOOLEAN, PRIMARY KEY (applicationId),
                FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (jobId) REFERENCES Job(jobId) ON DELETE CASCADE  ON UPDATE CASCADE)";
@@ -51,6 +51,16 @@
               FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
+
+    $query = "CREATE TABLE Rating(rateId INT(10) NOT NULL AUTO_INCREMENT, studentId INT NOT NULL ,employerId INT NOT NULL, starRank INT(10) NOT NULL,PRIMARY KEY (rateId), 
+                FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
+                FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE)";
+
+    $query = "CREATE TABLE Chat(chatId INT(10) NOT NULL AUTO_INCREMENT,studentId INT NOT NULL ,employerId INT NOT NULL, timestamp TIMESTAMP  NOT NULL,
+               message VARCHAR (2000),PRIMARY KEY (chatId),
+               FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
+                FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE )";
+
 
     $query = "insert into Student (name, password, uniEmail) values (\"nirdesh\", \"showtime\",\"abc@rgu.ac.uk\")";
            $ret = $connection->query ($query);
