@@ -63,7 +63,7 @@ echo $date1;
 
 
 $query = "insert into job (employerId, title, description,category, wages, company, location, date, jobPic )
- values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\",\"$jobPic\")";
+ values( \"$employerId \", \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\",\"$jobPic\")";
 $ret = $connection->query ($query); 
 if (!$ret) {
 
