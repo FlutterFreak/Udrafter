@@ -52,7 +52,7 @@ if (isset ($_GET["date"])) {
 
 }
 $date = 28/01/17;
-$query = "SELECT date_format($date,'%m/%d/%Y') as $date FROM job";
+$query = "SELECT date_format(date,'%m/%d/%Y') as date FROM job";
 $ret = $connection->query ($query);
 echo $date;
 
