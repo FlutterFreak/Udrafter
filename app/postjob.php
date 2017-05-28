@@ -53,6 +53,10 @@ if (isset ($_GET["date"])) {
 }
 
 
+$date1 = date_format($date,'%m/%d/%Y');
+echo $date1;
+
+
 
 
 
