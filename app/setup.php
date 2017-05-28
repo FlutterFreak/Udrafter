@@ -43,7 +43,7 @@
 
     $query = "CREATE TABLE Job( jobId INT(10) NOT NULL AUTO_INCREMENT,  employerId INT NOT NULL, title Varchar
             (100) NOT NULL,  description varchar (1000) NOT NULL, category VARCHAR (50),wages Varchar (10), company Varchar (100),
-                  location varchar (100), date DATE, jobPic LONGBLOB,  PRIMARY KEY (jobId),
+                  location varchar (100),  date_format(date,'%m/%d/%Y') DATE, jobPic LONGBLOB,  PRIMARY KEY (jobId),
                  FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
