@@ -46,12 +46,18 @@ $location = $_GET["location"];
 } 
 if (isset ($_GET["date"])) {
     $date = $_GET["date"];
+}
+    if (isset ($_GET["jobPic"])) {
+        $jobPic = $_GET["jobPic"];
 
 }
 
+echo $jobPic;
 
 
-$query = "insert into job (employerId, title, description,category, wages, company, location, (DATE_FORMAT(date,\"%d/%m/%Y\"), ) values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
+
+$query = "insert into job (employerId, title, description,category, wages, company, location, (DATE_FORMAT(date,\"%d/%m/%Y\"), )
+ values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
 $ret = $connection->query ($query); 
 if (!$ret) {
 
