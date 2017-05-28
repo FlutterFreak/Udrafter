@@ -51,7 +51,9 @@ if (isset ($_GET["date"])) {
         $jobPic = $_GET["jobPic"];
 
 }
-
+$date = 28/01/17;
+$date = "SELECT date_format($date,'%m/%d/%Y') as $date FROM job";
+echo $date;
 
 
 
