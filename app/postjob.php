@@ -52,12 +52,12 @@ if (isset ($_GET["date"])) {
 
 }
 
-echo $jobPic;
 
 
 
-$query = "insert into job (employerId, title, description,category, wages, company, location, date )
- values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\")";
+
+$query = "insert into job (employerId, title, description,category, wages, company, location, date, jobPic )
+ values($employerId, \"$title\",\"$description\",\"$category\",\"$wages\",\"$company\",\"$location\",\"$date\",\"$jobPic\")";
 $ret = $connection->query ($query); 
 if (!$ret) {
 
