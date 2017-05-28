@@ -20,10 +20,10 @@
 
     $query = "DROP TABLE Employer";
 	$ret = $connection->query ($query);
-
+*/
     $query = "DROP TABLE  Job";
     $ret = $connection->query ($query);
-*/
+
     $query = "DROP TABLE  Application";
     $ret = $connection->query ($query);
 
