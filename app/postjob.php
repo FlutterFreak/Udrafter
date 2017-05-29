@@ -24,31 +24,31 @@ if (isset ($_SESSION["email"])) {
 
 
 
-if (isset ($_GET["title"])) {
-$title = $_GET["title"];
+if (isset ($_POST["title"])) {
+$title = $_POST["title"];
 
 }
-if (isset ($_GET["description"])) {
-$description = $_GET["description"];
+if (isset ($_POST["description"])) {
+$description = $_POST["description"];
 } 
-if (isset ($_GET["category"])) {
-$category= $_GET["category"];
+if (isset ($_POST["category"])) {
+$category= $_POST["category"];
 } 
-if (isset ($_GET["wages"])) {
-$wages= $_GET["wages"];
+if (isset ($_POST["wages"])) {
+$wages= $_POST["wages"];
 
 }
-if (isset ($_GET["company"])) {
-$company = $_GET["company"];
+if (isset ($_POST["company"])) {
+$company = $_POST["company"];
 } 
-if (isset ($_GET["location"])) {
-$location = $_GET["location"];
+if (isset ($_POST["location"])) {
+$location = $_POST["location"];
 } 
-if (isset ($_GET["date"])) {
-    $date = $_GET["date"];
+if (isset ($_POST["date"])) {
+    $date = $_POST["date"];
 }
-    if (isset ($_GET["jobPic"])) {
-        $jobPic = $_GET["jobPic"];
+    if (isset ($_POST["jobPic"])) {
+        $jobPic = $_POST["jobPic"];
 
 }
 
