@@ -48,13 +48,15 @@ $location = $_POST["location"];
 if (isset ($_POST["date"])) {
     $date = $_POST["date"];
 }
-$target_path ="./uploads/";
-$uid = uniqid();
-$file = $uid.".jpeg";
-move_uploaded_file($_FILES["jobPic"]["tmp_name"], $target_path.$file);
+if (isset ($_FILES["jobPic"])) {
 
-$jobPic = $target_path.$file;
+    $target_path = "./uploads/";
+    $uid = uniqid();
+    $file = $uid . ".jpeg";
+    move_uploaded_file($_FILES["jobPic"]["tmp_name"], $target_path . $file);
 
+    $jobPic = $target_path . $file;
+}
 
 
 
