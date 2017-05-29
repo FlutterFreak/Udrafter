@@ -56,6 +56,8 @@ if (isset ($_FILES["jobPic"])) {
     move_uploaded_file($_FILES["jobPic"]["tmp_name"], $target_path . $file);
 
     $jobPic = $target_path . $file;
+}else {
+    $jobPic = "";
 }
 
 $imageURL = $jobPic;
