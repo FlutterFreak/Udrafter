@@ -51,7 +51,7 @@ if (isset ($_POST["date"])) {
         $jobPic = $_POST["jobPic"];
 
 }
-print_r($_FILE["jobPic"]);
+print_r($_FILES["jobPic"]);
 
      function imageCreateFromAny($jobPic) {
         $type = exif_imagetype($jobPic); //
