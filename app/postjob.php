@@ -52,7 +52,7 @@ if (isset ($_FILES["jobPic"])) {
     $image = $_FILES['jobPic']['name'];
     $target_path = "./uploads/";
     $uid = uniqid();
-    $file = $uid .$image ;
+    $file = $uid .$image.".jpeg" ;
     move_uploaded_file($_FILES["jobPic"]["tmp_name"], $target_path . $file);
 
     $jobPic = $target_path . $file;
