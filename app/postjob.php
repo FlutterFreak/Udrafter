@@ -47,11 +47,12 @@ $location = $_POST["location"];
 if (isset ($_POST["date"])) {
     $date = $_POST["date"];
 }
-    if (isset ($_POST["jobPic"])) {
+    if (isset ($_File["jobPic"])) {
         $jobPic = $_POST["jobPic"];
 
 }
-echo $jobPic;
+print_r($_FILE["jobPic"]);
+
      function imageCreateFromAny($jobPic) {
         $type = exif_imagetype($jobPic); //
       $allowedTypes = array(
