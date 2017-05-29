@@ -3,7 +3,7 @@ session_start();
 
 include 'db_connect.php';
 header('Content-type: application/json');
-
+/*
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
 
@@ -14,7 +14,7 @@ if (isset ($_SESSION["email"])) {
      echo json_encode($json);
 }
 
-
+*/
     include 'db_connect.php';
     $query_get = "select * from Employer where  email=\"$email\"";
 
