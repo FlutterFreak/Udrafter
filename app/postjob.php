@@ -62,6 +62,8 @@ if (isset ($_FILES["jobPic"])) {
 
 $imageURL = $jobPic;
 echo $imageURL;
+$dir = sys_get_temp_dir();
+echo $dir;
 
 
 
