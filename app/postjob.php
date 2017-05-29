@@ -47,13 +47,16 @@ $location = $_POST["location"];
 if (isset ($_POST["date"])) {
     $date = $_POST["date"];
 }
-    if (isset ($_File["jobPic"])) {
-        $jobPic = $_POST["jobPic"];
-
+    if (isset ($_FILES["jobPic"])) {
+        $jobPic = $_FILES["jobPic"];
 }
-print_r($_FILES["jobPic"]);
+$jobPic = base64_decode($jobPic);
+$im = imagecreatefromstring($jobPic);
+echo $im;
 
-     function imageCreateFromAny($jobPic) {
+
+
+   /*  function imageCreateFromAny($jobPic) {
         $type = exif_imagetype($jobPic); //
       $allowedTypes = array(
                        1, // [] gif
@@ -81,7 +84,7 @@ print_r($_FILES["jobPic"]);
 return $im;
      }
 
-
+*/
 
 
 
