@@ -3,7 +3,7 @@ session_start();
 
 include 'db_connect.php';
 header('Content-type: application/json');
-if (isset ($_SESSION["email"])) {
+/*if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
 
     
@@ -13,7 +13,7 @@ if (isset ($_SESSION["email"])) {
      echo json_encode($json);
 }
 
-
+*/
     include 'db_connect.php';
     $query_get = "select * from Employer where  email=\"$email\"";
 
@@ -51,7 +51,36 @@ if (isset ($_POST["date"])) {
         $jobPic = $_POST["jobPic"];
 
 }
+    $jobPic= "file://C:/Users/laptop/AppData/Local/Temp/temp7077523307429828538..png";
+     function imageCreateFromAny($jobPic) {
+        $type = exif_imagetype($jobPic); //
+      $allowedTypes = array(
+                       1, // [] gif
+                       2, // [] jpeg
+                       3, // [] png
+                         4,// [] bmp
+      );
+     if (!in_array($type, $allowedTypes)) {
+        return false;
+}
+  switch($type){
+      case 1:
+            $im = imageCreateFromGif($jobPic);
+      break;
+      case 2 :
+         $im = imageCreateFromJpeg($jobPic);
+      break;
+         case 3 :
+         $im = imageCreateFromPng($jobPic);
+      break;
+      case 6 :
+            $im = imageCreateFromBmp($jobPic);
+     break;
+    }
+return $im;
+     }
 
+echo $im;
 
 
 
