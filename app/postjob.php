@@ -48,52 +48,14 @@ $location = $_POST["location"];
 if (isset ($_POST["date"])) {
     $date = $_POST["date"];
 }
-    if (isset ($_FILES["jobPic"])) {
-        $jobPic = $_FILES["jobPic"];
-        $jobPic = base64_decode($jobPic);
-}
-/*
-$im = imagecreatefromstring($jobPic);
+$target_path ="./uploads/";
+$uid = uniqid();
+$file = $uid.".jpeg";
+move_uploaded_file($_FILES["jobPic"]["tmp_name"], $target_path.$file);
 
-$tmp_dir = $_FILES['jobPic']['tmp_name'];
-$uploads_dir ="/uploads";
-$pic = rand(1000,100000000)."-".basename($im);
+$jobPic = $target_path.$file;
 
 
-move_uploaded_file($tmp_dir, $uploads_dir . $pic);
-$jobPic = $uploads_dir . $pic;
-
-*/
-
-   /*  function imageCreateFromAny($jobPic) {
-        $type = exif_imagetype($jobPic); //
-      $allowedTypes = array(
-                       1, // [] gif
-                       2, // [] jpeg
-                       3, // [] png
-                         4,// [] bmp
-      );
-     if (!in_array($type, $allowedTypes)) {
-        return false;
-}
-  switch($type){
-      case 1:
-            $im = imageCreateFromGif($jobPic);
-      break;
-      case 2 :
-         $im = imageCreateFromJpeg($jobPic);
-      break;
-         case 3 :
-         $im = imageCreateFromPng($jobPic);
-      break;
-      case 4 :
-            $im = imageCreateFromBmp($jobPic);
-     break;
-    }
-return $im;
-     }
-
-*/
 
 
 
