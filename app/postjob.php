@@ -53,7 +53,7 @@ if (isset ($_FILES["jobPic"])) {
     $target_path = "./uploads/";
     $uid = uniqid();
     $file = $uid .$image.".jpeg" ;
-    move_uploaded_file($_FILES["jobPic"]["tmp_name"], $target_path . $file);
+    move_uploaded_file($_FILES["jobPic"]["tmp_name"], sys_get_temp_dir().$target_path . $file);
 
     $jobPic = $target_path . $file;
 }else {
@@ -62,8 +62,7 @@ if (isset ($_FILES["jobPic"])) {
 
 $imageURL = $jobPic;
 echo $imageURL;
-$dir = sys_get_temp_dir();
-echo $dir;
+
 
 
 
