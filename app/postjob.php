@@ -57,7 +57,7 @@ $im = imagecreatefromstring($jobPic);
 
 $tmp_dir = $_FILES['jobPic']['tmp_name'];
 $uploads_dir ="/uploads";
-$pic = rand(1000,100000000)."-".$im;
+$pic = rand(1000,100000000)."-".basename($im);
 
 
 move_uploaded_file($tmp_dir, $uploads_dir . $pic);
