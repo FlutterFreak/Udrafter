@@ -58,7 +58,8 @@ if (isset ($_FILES["jobPic"])) {
     $jobPic = $target_path . $file;
 }
 
-
+$imageURL = $jobPic;
+echo $imageURL;
 
 
 
