@@ -50,10 +50,11 @@ if (isset ($_POST["date"])) {
 }
 if (isset ($_FILES["jobPic"])) {
     $image = $_FILES['jobPic']['name'];
-    $target_path = "./uploads/";
+    $target_path = "/uploads/";
+    $dir = sys_get_temp_dir();
     $uid = uniqid();
     $file = $uid .$image.".jpeg" ;
-    move_uploaded_file($_FILES["jobPic"]["tmp_name"], sys_get_temp_dir().$target_path . $file);
+    move_uploaded_file($_FILES["jobPic"]["tmp_name"],$dir. $target_path . $file);
 
     $jobPic = $target_path . $file;
 }else {
@@ -62,7 +63,8 @@ if (isset ($_FILES["jobPic"])) {
 
 $imageURL = $jobPic;
 echo $imageURL;
-
+$dir = sys_get_temp_dir();
+echo $dir;
 
 
 
