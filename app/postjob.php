@@ -61,8 +61,7 @@ if (isset ($_FILES["jobPic"])) {
     $jobPic = "";
 }
 
-$imageURL = $jobPic;
-echo $imageURL;
+
 
 
 
