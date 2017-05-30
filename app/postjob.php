@@ -56,7 +56,7 @@ if (isset ($_FILES["jobPic"])) {
     $file = $uid .$image.".jpeg" ;
     move_uploaded_file($_FILES["jobPic"]["tmp_name"],$target_path . $file);
 
-    $jobPic =$dir. $target_path . $file;
+    $jobPic =strip_tags($dir. $target_path . $file);
 }else {
     $jobPic = "";
 }
