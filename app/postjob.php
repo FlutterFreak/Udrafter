@@ -3,11 +3,7 @@ session_start();
 
 include 'db_connect.php';
 header('Content-type: application/json');
-foreach($_POST as $key => $value){
-    if (!is_array($value)){
-        $_POST[$key] = strip_tags($value);
-    }
-}
+
 
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
