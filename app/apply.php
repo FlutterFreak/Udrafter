@@ -2,16 +2,16 @@
 
 session_start();
 
-if (!isset ($_SESSION["uniemail"])) {
+/*if (!isset ($_SESSION["uniemail"])) {
 
     $json['response']= "Sign In as a student to apply for Jobs";
 
     echo json_encode($json);
     return;
-}
-    else {
+}*/
+    
     $uniemail= $_SESSION["uniemail"];
-    }
+
 if (isset ($_GET["jobId"])) {
     $jobId = $_GET["jobId"];
 }
