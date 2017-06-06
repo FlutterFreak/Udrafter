@@ -40,10 +40,11 @@ if (!isset ($_SESSION["email"])) {
         $response["Failed"] = 'Not a valid user, please Register to Sign In';
         echo json_encode($response);
     }
- }else {
+ }
+/*else {
     $response["LoggedIn"] = 'you are already logged in';
     echo json_encode($response);
-}
+}*/
 
 
 ?>
