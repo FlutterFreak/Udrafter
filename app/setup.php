@@ -48,7 +48,7 @@
     $ret = $connection->query ($query);
 
     $query = "CREATE TABLE Application( applicationId INT(10) NOT NULL AUTO_INCREMENT, jobId INT NOT NULL, studentId INT NOT NULL ,employerId INT NOT NULL,
-               isCompleted BOOLEAN NOT NULL, PRIMARY KEY (applicationId),
+               isCompleted BOOLEAN  NULL, PRIMARY KEY (applicationId),
                FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (studentId) REFERENCES Student(studentId) ON DELETE CASCADE  ON UPDATE CASCADE,
                 FOREIGN KEY (jobId) REFERENCES Job(jobId) ON DELETE CASCADE  ON UPDATE CASCADE)";
