@@ -37,14 +37,16 @@ if (!isset ($_SESSION["email"])) {
         }
     }
     else {
+
         $response["Failed"] = 'Not a valid user, please Register to Sign In';
         echo json_encode($response);
     }
  }
-/*else {
-    $response["LoggedIn"] = 'you are already logged in';
+else {
+    session_destroy();
+    $response["Logged out"] = 'you are logged out please login again';
     echo json_encode($response);
-}*/
+}
 
 
 ?>
