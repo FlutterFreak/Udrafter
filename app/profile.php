@@ -11,13 +11,13 @@ if (isset ($_SESSION["email"])) {
     $results = $connection->query($query_get);
 
 
-    $row = mysqli_fetch_array($results);
+ /*   $row = mysqli_fetch_array($results);
 
     $name = $row["name"];
     $email = $row["email"];
     $company = $row["company"];
     $profilePic = $row["profilePic"];
-    
+    */
     $num_results = mysqli_num_rows ($results);
 
     $encode = array();
@@ -40,7 +40,7 @@ else if (isset ($_SESSION["uniemail"])) {
     $results = $connection->query($query_get);
 
 
-    $row = mysqli_fetch_array($results);
+ /*   $row = mysqli_fetch_array($results);
 
     $name = $row["name"];
 
@@ -49,7 +49,7 @@ else if (isset ($_SESSION["uniemail"])) {
 
 
     $num_results = mysqli_num_rows ($results);
-
+*/
     $encode = array();
 
     while($row = mysqli_fetch_assoc($results)) {
