@@ -15,12 +15,12 @@
     $query = "DROP TABLE Chat";
     $ret = $connection->query ($query);
 
-   /* $query = "DROP TABLE  Student";
+   $query = "DROP TABLE  Student";
 	$ret = $connection->query ($query);
 
     $query = "DROP TABLE Employer";
 	$ret = $connection->query ($query);
-*/
+*
     $query = "DROP TABLE  Job";
     $ret = $connection->query ($query);
 
@@ -33,17 +33,17 @@
 
     $query = "CREATE TABLE Student( studentId INT(10) NOT NULL AUTO_INCREMENT,, name Varchar (100) NOT NULL,
                password varchar (10) NOT NULL,
-              uniEmail Varchar (100) NOT NULL, profilePic LONGBLOB, PRIMARY KEY (studentId))";
+              uniEmail Varchar (100) NOT NULL, profilePic BLOB NOT NULL, resume BLOB NOT NULL, PRIMARY KEY (studentId))";
 	$ret = $connection->query ($query);
 
     $query = "CREATE TABLE Employer( employerId INT(10) NOT NULL AUTO_INCREMENT,  name Varchar (100) NOT NULL,
           password varchar (10) NOT NULL, email Varchar (100) NOT NULL,
-             company Varchar (100) NOT NULL, profilePic LONGBLOB,  PRIMARY KEY (employerId))";
+             company Varchar (100) NOT NULL, profilePic BLOB  NOT NULL,  PRIMARY KEY (employerId))";
 	$ret = $connection->query ($query);
 
     $query = "CREATE TABLE Job( jobId INT(10) NOT NULL AUTO_INCREMENT,  employerId INT NOT NULL, title Varchar
             (100) NOT NULL,  description varchar (1000) NOT NULL, category VARCHAR (50),wages Varchar (10), company Varchar (100),
-                  location varchar (100),  date_format(date,'%m/%d/%Y') D, jobPic LONGBLOB,  PRIMARY KEY (jobId),
+                  location varchar (100),  date_format(date,'%m/%d/%Y') D, jobPic BLOB NOT NULL,  PRIMARY KEY (jobId),
                  FOREIGN KEY (employerId) REFERENCES Employer(employerId) ON DELETE CASCADE  ON UPDATE CASCADE)";
     $ret = $connection->query ($query);
 
