@@ -29,16 +29,16 @@ if (!isset ($_SESSION["uniemail"])) {
             $response["Success"] = 'Login successful' . "" . $_SESSION["uniemail"];
             echo json_encode($response);
         } else {
-            $response["Failed"] = 'email or password is not correct, please enter correct details';
+            $response["Incorrect"] = 'email or password is not correct, please enter correct details';
             echo json_encode($response);
         }
     } else {
         $response["Failed"] = 'Not a valid user, please Register to Sign In';
         echo json_encode($response);
     }}
-else {
+/*else {
     $response["Success"] = 'you are already logged in';
     echo json_encode($response);
-}
+}*/
   ?>
 
