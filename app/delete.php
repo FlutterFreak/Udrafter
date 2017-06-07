@@ -5,7 +5,7 @@ header('Content-type: application/json');
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
 
-    $query_get ="DELETE * FROM Employer WHERE email=\"$email\"";
+    $query_get ="delete * from Employer where email=\"$email\"";
     $results = $connection->query($query_check);
     if($results== true){
         $response["deleted"] = 'Account Successfully Deleted';
@@ -18,7 +18,7 @@ if (isset ($_SESSION["email"])) {
 }else if (isset ($_SESSION["uniemail"])) {
     $uniemail = $_SESSION["uniemail"];
 
-    $query_get ="DELETE * FROM Student WHERE uniEmail=\"$uniemail\"";
+    $query_get ="delete * from Student where uniEmail=\"$uniemail\"";
     $results = $connection->query($query_check);
     if($results== true){
         $response["deleted"] = 'Account Successfully Deleted';
