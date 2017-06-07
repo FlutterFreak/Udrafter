@@ -8,15 +8,13 @@ echo "jhf".$email;
     $query_get ="delete from Employer where email=\"$email\"";
     $results = $connection->query($query_get);
     echo $results;
-    if($results== true){
+    if($results== true) {
         $response["deleted"] = 'Account Successfully Deleted';
         // echoing JSON response
         echo json_encode($response);
         session_destroy();
         exit;
-    }else {
-        echo "Error deleting record: " . $connection->error;
-}
+    }
 
 
 }else if (isset ($_SESSION["uniemail"])) {
