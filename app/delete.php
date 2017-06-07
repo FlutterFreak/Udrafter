@@ -4,7 +4,7 @@ include 'db_connect.php';
 header('Content-type: application/json');
 if (isset ($_SESSION["email"])) {
     $email = $_SESSION["email"];
-
+echo "jhf".$email;
     $query_get ="delete * from Employer where email=\"$email\"";
     $results = $connection->query($query_check);
     if($results== true){
