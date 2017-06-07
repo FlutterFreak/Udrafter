@@ -43,21 +43,21 @@ if ($num_results != 0) {
     // echoing JSON response
     echo json_encode($response);
     exit;
-}
+}else {
 
-$query = "insert into Application ( jobId, studentId, employerId) values($jobId, \"$studentId\",\"$employerId\")";
-    
-    $ret = $connection->query ($query);
+    $query = "insert into Application ( jobId, studentId, employerId) values($jobId, \"$studentId\",\"$employerId\")";
+
+    $ret = $connection->query($query);
     if (!$ret) {
-        $json['failed']= "Failed to Apply for Job:" . mysqli_error($connection);
+        $json['failed'] = "Failed to Apply for Job:" . mysqli_error($connection);
 
         echo json_encode($json);
-      
-    } else{
-        $json['success']= "Your Have succesfully applied to this job";
+
+    } else {
+        $json['success'] = "Your Have succesfully applied to this job";
 
         echo json_encode($json);
     }
-
+}
 $connection->close();
 ?>
