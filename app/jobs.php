@@ -34,7 +34,7 @@ for ($i = 0; $i < $num_results; $i++) {
     }
 
     echo json_encode($encode);
-//}
-//
+
+
 $connection->close();
 ?>
