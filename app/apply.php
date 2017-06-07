@@ -18,21 +18,13 @@ if (isset ($_GET["jobId"])) {
 if (isset ($_GET["employerId"])) {
     $employerId = $_GET["employerId"];
 }
-
-    include 'db_connect.php';
-    $query_get = "select * from Student where  uniEmail=\"$uniemail\"";
-
-    $results = $connection->query ($query_get);
-
-    $row = mysqli_fetch_array($results);
-    $studentId = $row["studentId"];
-
+include 'db_connect.php';
 $query_check = "select * from Application where jobId=\"$jobId\"";
 
 $results = $connection->query($query_check);
 
 if (!$results) {
-    $response["failed"] = mysql_error($connection);
+    $response["Failed"] = mysql_error($connection);
     echo json_encode($response);
 }
 
@@ -44,7 +36,12 @@ if ($num_results != 0) {
     echo json_encode($response);
     exit;
 }else {
+    $query_get = "select * from Student where  uniEmail=\"$uniemail\"";
 
+    $results = $connection->query ($query_get);
+
+    $row = mysqli_fetch_array($results);
+    $studentId = $row["studentId"];
     $query = "insert into Application ( jobId, studentId, employerId) values($jobId, \"$studentId\",\"$employerId\")";
 
     $ret = $connection->query($query);
