@@ -44,7 +44,7 @@ if (!isset ($_SESSION["email"])) {
  }
 else {
     session_destroy();
-    $response["Logged out"] = 'you are logged out please login again';
+    $response["LoggedOut"] = 'you are logged out please login again';
     echo json_encode($response);
 }
 
