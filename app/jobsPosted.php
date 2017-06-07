@@ -12,7 +12,7 @@ $results = $connection->query ($query_get);
 
 $row = mysqli_fetch_array($results);
 $employerId = $row["employerId"];
-$query_check = "select jobId from Application where employerId=\"$employerId\"";
+$query_check = "select jobId from Job where employerId=\"$employerId\"";
 
 $results = $connection->query($query_check);
 
