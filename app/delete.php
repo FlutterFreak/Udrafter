@@ -14,7 +14,10 @@ echo "jhf".$email;
         echo json_encode($response);
         session_destroy();
         exit;
-    }
+    }else {
+        echo "Error deleting record: " . $connection->error;
+}
+
 
 }else if (isset ($_SESSION["uniemail"])) {
     $uniemail = $_SESSION["uniemail"];
