@@ -1,12 +1,12 @@
 <?php
-//session_start();
+session_start();
 //Jobs Applied
 include 'db_connect.php';
 
 header('Content-type: application/json');
 
-//$uniemail= $_SESSION["uniemail"];
-$uniemail= "abc@rgu.ac.uk";
+$uniemail= $_SESSION["uniemail"];
+
 
 $query_get = "select * from Student where  uniEmail=\"$uniemail\"";
 
