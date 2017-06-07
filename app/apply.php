@@ -27,7 +27,7 @@ if (isset ($_GET["employerId"])) {
     $row = mysqli_fetch_array($results);
     $studentId = $row["studentId"];
 
-$query_check = "select * from Student where jobId=\"$jobId\"";
+$query_check = "select * from Application where jobId=\"$jobId\"";
 
 $results = $connection->query($query_check);
 
