@@ -14,7 +14,7 @@ $results = $connection->query ($query_get);
 
 $row = mysqli_fetch_array($results);
 $studentId = $row["studentId"];
-
+echo $studentId;
 $query_check = "select jobId from Application where studentId=\"$studentId\"";
 
 $results = $connection->query($query_check);
