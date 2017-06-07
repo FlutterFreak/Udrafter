@@ -7,6 +7,7 @@ if (isset ($_SESSION["email"])) {
 echo "jhf".$email;
     $query_get ="delete * from Employer where email=\"$email\"";
     $results = $connection->query($query_check);
+    echo $query_get;
     if($results== true){
         $response["deleted"] = 'Account Successfully Deleted';
         // echoing JSON response
